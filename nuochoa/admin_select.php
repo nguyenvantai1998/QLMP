@@ -1,13 +1,7 @@
 
 <?php
 
-$table = query_select("select maloai, tenloai,mota from loaisp");
-$count = $table->rowCount();
-if ($count > 0) {
-    foreach ($table as $row) {
-        echo $row['maloai'] . "\t".$row['tenloai']."\t".$row['mota']."<br>";
-    }
-}
+
 
 
 function query_select($sql)
