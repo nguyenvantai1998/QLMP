@@ -5,6 +5,7 @@
         $count = $table->rowCount();
         if ($count > 0) {
             foreach ($table as $row) {
+            $masp = $row['MaSP'];
     ?>
 
     <div class="box">
@@ -13,7 +14,7 @@
                 <img src="<?php echo $row['URLHinh']; ?>" alt="">
             </div>
             <div class="name-price-sale">
-                <a href="detail.php">
+                <a href="detail.php?masp=<?php echo $masp ?>">
                     <p class="name"><?php echo $row['Tensp']; ?></p>
                     <p class="price"><?php echo $row['Gia']; ?> VNĐ</p>
                     <p class="price-sale">90.000.000 VNĐ</p>

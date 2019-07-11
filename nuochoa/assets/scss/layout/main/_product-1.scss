@@ -73,6 +73,8 @@
                         img{
                             @include img-res;
                             transition: all .5s;
+                            height: 200px;
+                            width: 100%;
                         }
                     }
                     .name-price-sale{

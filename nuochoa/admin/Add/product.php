@@ -1,5 +1,5 @@
 <?php
-include ("Query/admin_insert.php");
+include ("./Query/admin_insert.php");
 if (isset($_POST["submit"]))
 {
   try {
@@ -10,6 +10,8 @@ if (isset($_POST["submit"]))
     $maloai=$_POST['maloai'];
     insert_sp1($masp,$maloai,$mancc);
     //header("location:indexAdmin.php");
+
+    echo $mancc;
 
          
    

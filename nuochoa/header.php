@@ -1,5 +1,5 @@
-<?php 
-    include("admin/Query/admin_select.php");
+<?php
+    include("select.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

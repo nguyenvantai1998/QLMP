@@ -34,9 +34,8 @@
 
           <!-- FORM ADD PRODUCT -->
     
-          <?php include("./Add/product.php"); ?>
+          <?php include("./Select/list-product.php"); ?>
           <!-- END FORM -->
-
 
         </div><!-- /.container-fluid -->
       </section>

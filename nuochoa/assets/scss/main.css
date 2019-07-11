@@ -726,8 +726,9 @@ input, select {
                 #main .main-1 .boxProduct .product-1 .pr-container .row-2 .box > div .img img {
                   max-width: 100%;
                   height: auto;
-                  width: 100%;
-                  transition: all .5s; }
+                  transition: all .5s;
+                  height: 200px;
+                  width: 100%; }
               #main .main-1 .boxProduct .product-1 .pr-container .row-2 .box > div .name-price-sale {
                 padding: 15px 0;
                 text-align: center;

@@ -13,44 +13,7 @@
         <section class="detailProduct">
             <div class="dt-pr-container">
                 <!-- chi tiết sản phẩm -->
-                <div class="col-left detail">
-                    <div class="row title-name">
-                        <div class="brand">Dolce & Gabbana</div>
-                        <div class="name">Happy Chopard Lemon Dulci</div>
-                    </div>
-
-                    <div class="row box">
-                        <div class="left-img">
-                            <div>
-                                <img src="./assets/img/1540266151.5082.png" alt="">
-                            </div>
-                        </div>
-                        <div class="right-content">
-                            <div class="row-1">
-                                <ul class="content">
-                                    <li><span>Nhãn hiệu</span>: <span>Chopard</span></li>
-                                    <li><span>Giới tính</span>: <span>Nữ</span></li>
-                                    <li><span>Xuất xứ</span>: <span>Thụy Sĩ</span></li>
-                                    <li><span>Bộ sưu tập</span>: <span></span></li>
-                                    <li><span>Phát hành</span>: <span>2018</span></li>
-                                    <li><span>Màu sắc</span>: <span></span></li>
-                                    <li><span>Nồng độ</span>: <span>Eau de parfum</span></li>
-                                    <li><span>Nhà pha chế</span>: <span></span></li>
-                                    <li><span>Nhóm hương</span>: <span>Hương Cam Chanh - Citrus</span></li>
-                                    <li><span>Phong cách</span>: <span>Sảng Khoái, Sống động, Tươi Mát</span></li>
-                                </ul>
-                            </div>
-
-                            <div class="row-2">
-                                <h4 class="title-sub">Hương đặc trưng</h4>
-                                <p>Hương đầu: <span>Quả chanh vàng sicili, cam bergamot calabria, hương nước.</span></p>
-                                <p>Hương giữa: <span>Long diên hương, hương nước biển.</span></p>
-                                <p>Hương cuối: <span>Cây hoắc hương, gỗ đàn hương, cỏ hương bài, an tức hương.</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php include("detail/product.php"); ?>
 
                 <!-- chi tiết liên quan -->
                 <div class="col-right related">
@@ -222,7 +185,7 @@
                     </div>
 
                     <!-- góp ý kiến -->
-                    <form id="comment-form" class="form-review" action="" method="post">
+                    <!-- <form id="comment-form" class="form-review" action="" method="post">
                         <h3 class="title"> Gửi đánh giá của bạn </h3>
                         <div class="inner">
                             <p> Chọn đánh giá của bạn
@@ -261,7 +224,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </section>
