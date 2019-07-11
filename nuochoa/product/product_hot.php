@@ -5,13 +5,12 @@
         $count = $table->rowCount();
         if ($count > 0) {
             foreach ($table as $row) {
-                // echo $row['Tensp'];
     ?>
 
     <div class="box">
         <div>
             <div class="img">
-                <img src="./assets/img/product-1.png" alt="">
+                <img src="<?php echo $row['URLHinh']; ?>" alt="">
             </div>
             <div class="name-price-sale">
                 <p class="name"><?php echo $row['Tensp']; ?></p>
@@ -21,16 +20,9 @@
         </div>
     </div>
 
-
-
-
     <?php
             }
         }
 
     ?>
-
-    
-
-
 </div>
