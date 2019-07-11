@@ -115,9 +115,9 @@
                                             placeholder="abc@gmai.com">
                                     </div>
                                 </div>
-                                <!-- ADDRESS -->
+                                <!--REGISTER ADDRESS ALWAY -->
                                 <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Địa chỉ</label>
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Địa chỉ TT</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" placeholder="92 Nguyễn Trãi...">
                                         <div class="form-row">
@@ -145,7 +145,36 @@
                                         </div>
                                     </div>
                                 </div>
-
+<!--ADDRESS NOW -->
+<div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Địa chỉ Hiện tại</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="92 Nguyễn Trãi...">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState">Phường</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Choose...</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState">Quận</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Choose...</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState">Thành phố</label>
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Choose...</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- OTHER INFOMATION -->
                                 <div class="form-group row">
                                     <div class="col-sm-2">Thông tin khác</div>
