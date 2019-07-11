@@ -89,7 +89,7 @@
                                 <div class="form-group row">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Ảnh CMND</label>
                                     <div class="col-sm-10">
-                                        <input type="file" class="form-control" multiple>
+                                        <input type="file" class="form-control">
                                     </div>
                                 </div>
                                 <!-- BIRTHDAY -->
