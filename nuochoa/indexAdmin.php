@@ -179,68 +179,8 @@ if (isset($_POST["submit"]))
       </ul>
     </nav>
     <!-- /.navbar -->
-
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="./assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
-      </a>
-
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="./assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
-          </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fa fa-dashboard"></i>
-                <p>
-                  Dashboard
-                  <i class="right fa fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="./index.html" class="nav-link active">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Thêm sản phẩm</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Dashboard v2</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Dashboard v3</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
+<!-- side Bar -->
+    <?php include("./admin/sideBar.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -268,54 +208,8 @@ if (isset($_POST["submit"]))
 
 
           <!-- FORM ADD PRODUCT -->
-          <form action="" method="post">
-            <!-- CODE PRODUCT & CATEGORY-->
-            <div class="form-row">
-              <!-- CODE PRODUCT -->
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Mã SP</label>
-                <input name="masp" type="text" class="form-control" placeholder="Mã sản phẩm">
-              </div>
-              <!-- CODE CATEGORY -->
-              <div class="form-group col-md-6">
-                  <label for="inputPassword4">Mã Loại</label>
-                  <select class="form-control" name="maloai">
-                    <option value="nH">01</option>
-                    <option>1</option>
-                  </select>
-                </div>
-            </div>
-            <!-- NAME PRODUCT -->
-            <div class="form-group">
-              <label for="inputAddress">Tên SP</label>
-              <input type="text" class="form-control" placeholder="Tên sản phẩm">
-            </div>
-
-            <!-- PRICE & QUATITY-->
-            <div class="form-row">
-              <!-- PRICE -->
-              <div class="form-group col-md-4">
-                <label for="inputEmail4">Giá</label>
-                <input type="number" class="form-control" placeholder="Nhập giá">
-              </div>
-              <!-- QUATITY -->
-              <div class="form-group col-md-4">
-                <label for="inputPassword4">Số lượng</label>
-                <input type="number" class="form-control" placeholder="Nhập số lượng">
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputPassword4">Mã nhà cung cấp</label>
-                <select class="form-control" name="mancc">
-                  <option value="01">Oriflame</option>
-                  <option>1</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row btn-form">
-            <button name="submit" type="submit" class="btn btn-primary" >THÊM</button>
-            </div>
-          </form>
-
+    
+          <?php include("./admin/Add/form-add-product.php"); ?>
           <!-- END FORM -->
 
 
@@ -323,38 +217,6 @@ if (isset($_POST["submit"]))
       </section>
       <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.0-alpha
-      </div>
-    </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-  </div>
-  <!-- ./wrapper -->
-
-  <!-- jQuery -->
-  <script src="./assets/plugins/jquery/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
-  <!-- Bootstrap 4 -->
-  <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- FastClick -->
-  <script src="./assets/plugins/fastclick/fastclick.js"></script>
-  <!-- AdminLTE App -->
-  <script src="./assets/js/adminlte.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-</body>
-
-</html>
+    <!-- Footer -->
+   <?php include("./admin/footer.php"); ?>
