@@ -13,9 +13,11 @@
                 <img src="<?php echo $row['URLHinh']; ?>" alt="">
             </div>
             <div class="name-price-sale">
-                <p class="name"><?php echo $row['Tensp']; ?></p>
-                <p class="price"><?php echo $row['Gia']; ?> VNĐ</p>
-                <p class="price-sale">90.000.000 VNĐ</p>
+                <a href="detail.php">
+                    <p class="name"><?php echo $row['Tensp']; ?></p>
+                    <p class="price"><?php echo $row['Gia']; ?> VNĐ</p>
+                    <p class="price-sale">90.000.000 VNĐ</p>
+                </a>
             </div>
         </div>
     </div>

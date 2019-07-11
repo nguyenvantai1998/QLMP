@@ -1,5 +1,5 @@
 <?php 
-    include("admin_select.php");
+    include("admin/Query/admin_select.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +58,7 @@
                         </a>
                     </div>
                 </div>
+
                 <div class="top-navbar">
                     <div class="menu-bar">
                         <div class="logo">
@@ -322,7 +323,7 @@
                                     <a href="#">BLOG</a>
                                 </li>
                                 <li>
-                                    <a href="#">VIDEO</a>
+                                    <a href="video.php">VIDEO</a>
                                 </li>
                             </ul>
                         </nav>
@@ -367,28 +368,3 @@
                     </div>
                 </div>
                 <hr>
-                <div class="banner">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><a href="#">
-                                    <img src="./assets/img/3_happyfamily.jpg" alt="banner">
-                                </a>
-                            </div>
-                            <div class="swiper-slide"><a href="#">
-                                    <img src="./assets/img/3_happyfamily.jpg" alt="banner">
-                                </a>
-                            </div>
-                            <div class="swiper-slide"><a href="#">
-                                    <img src="./assets/img/3_happyfamily.jpg" alt="banner">
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>

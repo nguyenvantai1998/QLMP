@@ -1,5 +1,14 @@
 
+    <!-- header -->
     <?php include("header.php"); ?>
+
+        <!-- slider banner -->
+        <?php include("sliderBanner.php"); ?>
+
+            </div>
+        </div>
+    </header> <!-- /header -->
+
 
     <!-- main -->
     <main id="main">
