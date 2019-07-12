@@ -34,7 +34,10 @@
 
           <!-- FORM ADD PRODUCT -->
     
-          <?php include("./Select/list-product.php"); ?>
+          <?php 
+          include("Query/admin_insert.php");
+          include("./Add/add-distribution.php"); 
+          ?>
           <!-- END FORM -->
 
         </div><!-- /.container-fluid -->
