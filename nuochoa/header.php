@@ -3,13 +3,13 @@
     $user = $password = "";
     if (isset($_POST["submit"])) {
         if ($_POST['user'] != "" && $_POST['password'] != "") {
-            try {
+            try {    
                 $user = $_POST['user'];
-                $oassword = $_POST['password'];
-                $sql="select * from qttk where TenTK='$user' and Matkhau='$password'";
-                $query = query_select($sql);
-                echo $query;
-                if(mysql_num_rows($query)==0){
+                $password = $_POST['password'];
+                $query = query_select("select * from qttk where qttk.TenTK='$user' and qttk.Matkhau='$password'");
+                $count = $query->rowCount();
+                // echo $count;
+                if($count==0){
                     echo '<script type="text/javascript">';
 
                     echo "setTimeout(function () { Swal.fire({
@@ -21,7 +21,29 @@
             
                     echo '}, 1000);</script>';
                 }else{
-                    echo '<script type="text/javascript">';
+
+                    // $query = query_select("select * from qttk where qttk.TenTK='$user' and qttk.Matkhau='$password'");
+                    // $count = $query->rowCount();
+                    // echo $count;
+                    // if($count==0){
+foreach($query as $row){
+    $session_id = $row['Quyen'];
+    // echo $session_id;
+    if( $session_id == 1){
+        echo '<script type="text/javascript">';
+
+        echo "setTimeout(function () { Swal.fire({
+            type: 'success',
+            title: 'Chào mừng ADMIN !',
+            showConfirmButton: false,
+            timer: 1500
+          });";
+
+        echo '}, 1000);</script>';
+
+        header("location:admin/indexAdmin.php");
+    }else{
+        echo '<script type="text/javascript">';
 
                     echo "setTimeout(function () { Swal.fire({
                         type: 'success',
@@ -31,6 +53,9 @@
                       });";
             
                     echo '}, 1000);</script>';
+    }
+}
+                    
                 }
             } catch (Throwable $th) {
             }
