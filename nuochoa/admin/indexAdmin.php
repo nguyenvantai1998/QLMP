@@ -13,21 +13,6 @@
       echo '}, 1000);</script>';
       $_SESSION['helloTitle'] = 0;
   }
-  // $hello_title="<script>localStorage.getItem('hello_admin')</script>";
-  // echo $hello_title;
-  // if($hello_title){
-  // echo '<script type="text/javascript">';
-
-  // echo "setTimeout(function () { Swal.fire({
-  //     type: 'success',
-  //     title: 'Chào mừng ADMIN !',
-  //     showConfirmButton: false,
-  //     timer: 1500
-  //   });";
-
-  // echo '}, 1000);</script>';
-  // echo "<script>localStorage.removeItem('hello_admin')</script>";
-  // }
 
   ?>
 <!-- header -->

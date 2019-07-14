@@ -213,10 +213,10 @@ include ('select.php')
                         <div class="login">
                             <div class="items">
                                 <div>
-                                    <a href="./login.php">Đăng nhập</a>
+                                    <a href="login.php">Đăng nhập</a>
                                 </div>
                                 <div>
-                                    <a href="#">Đăng ký</a>
+                                    <a href="register.php">Đăng ký</a>
                                 </div>
                             </div>
                         </div>

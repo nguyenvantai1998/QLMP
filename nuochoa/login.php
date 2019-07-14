@@ -139,7 +139,7 @@ foreach($query as $row){
                     <a href="#">I forgot my password</a>
                 </p>
                 <p class="mb-0">
-                    <a href="register.html" class="text-center">Đăng ký thành viên</a>
+                    <a href="register.php" class="text-center">Đăng ký thành viên</a>
                 </p>
             </div>
             <!-- /.login-card-body -->
