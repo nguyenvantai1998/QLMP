@@ -12,15 +12,37 @@
 ?>
 
     <div class="col-left detail">
-        <div class="row title-name">
+        <div class="title-name">
             <div class="brand"> <?php echo $row['TenNCC']; ?> </div>
             <div class="name"> <?php echo $row['Tensp']; ?> </div>
         </div>
 
         <div class="row box">
             <div class="left-img">
-                <div>
-                    <img src="<?php echo $row['URLHinh']; ?>" alt="">
+                <div class="list-img-product">
+                    <img src="<?php echo $row['URLHinh'] ?>" class="tabImgDetail" alt="">
+                    <!-- <img src="./assets/img/19b62738ccd9e79d308c6aa1632638b6.jpg" class="tabImgDetail" alt="">
+                    <img src="./assets/img/dt-2.jpg" class="tabImgDetail"alt="">
+                    <img src="./assets/img/1540266151.5082.png" class="tabImgDetail" alt="">
+                    <img src="./assets/img/1540266151.5082.png" class="tabImgDetail" alt=""> -->
+                </div>
+
+                <div class="list-button-img">
+                    <button class="buttonTabImgDetail buttonTabImgDetail-active">
+                        <img src="<?php echo $row['URLHinh'] ?>">
+                    </button>
+                    <!-- <button class="buttonTabImgDetail">
+                        <img src="./assets/img/1540266151.5082.png">
+                    </button>
+                    <button class="buttonTabImgDetail">
+                        <img src="./assets/img/1540266151.5082.png">
+                    </button>
+                    <button class="buttonTabImgDetail">
+                        <img src="./assets/img/1540266151.5082.png">
+                    </button>
+                    <button class="buttonTabImgDetail">
+                        <img src="./assets/img/1540266151.5082.png">
+                    </button> -->
                 </div>
             </div>
             <div class="right-content">

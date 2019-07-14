@@ -3,8 +3,8 @@
 function insert_loaisp($maloai, $tenloai,$mota)
 {
     try {
-        include '../connect.php';
-        include '../select.php';
+        include '.\..\..\connect.php';
+        include '.\..\..\select.php';
         $table=query_select("select * from loaisp where maloai='".$maloai."'");
         $count=$table->rowCount();
         if ($count>0)
@@ -27,8 +27,8 @@ function insert_loaisp($maloai, $tenloai,$mota)
 function insert_admin($tentk, $matkhau, $quyen)
 {
     try {
-        include 'connect.php';
-        include 'select.php';
+        include '.\..\..\connect.php';
+        include '.\..\..\select.php';
         $table=query_select("select * from qttk where tentk='".$tentk."'");
         $count=$table->rowCount();
         if ($count>0)

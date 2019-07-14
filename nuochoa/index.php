@@ -34,7 +34,7 @@
                         </div>
 
                         <!-- list product hot -->
-                        <?php include("./product/product_hot.php"); ?>
+                        <?php include("product/product_hot.php"); ?>
 
                     </div>
 

@@ -1,5 +1,5 @@
 <?php
-// include ("Query/admin_insert.php");
+include ("./Query/admin_insert.php");
 if (isset($_POST["submit"]))
 {
   try {
@@ -8,13 +8,14 @@ if (isset($_POST["submit"]))
 
     $mancc=$_POST['mancc'];
     $maloai=$_POST['maloai'];
-    insert_sp($masp,$maloai,$mancc);
+    insert_sp1($masp,$maloai,$mancc);
     //header("location:indexAdmin.php");
 
     echo $mancc;
 
+         
    
-} catch (PDOException $th) {
+} catch (\Throwable $th) {
   
     
 }

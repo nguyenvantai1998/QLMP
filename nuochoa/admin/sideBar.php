@@ -34,21 +34,21 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./indexAdmin.php" class="nav-link active">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>List sản phẩm</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./indexAdmin.php?page=them_nha_phan_phoi" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Thêm nhà cung cấp</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./indexAdmin.php?page=them_san_pham" class="nav-link">
+                  <a href="./index.html" class="nav-link active">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Thêm sản phẩm</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Dashboard v2</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index3.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Dashboard v3</p>
                   </a>
                 </li>
               </ul>
