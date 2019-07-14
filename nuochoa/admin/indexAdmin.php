@@ -1,4 +1,16 @@
 
+  <?php
+  echo '<script type="text/javascript">';
+
+  echo "setTimeout(function () { Swal.fire({
+      type: 'success',
+      title: 'Chào mừng ADMIN !',
+      showConfirmButton: false,
+      timer: 1500
+    });";
+
+  echo '}, 1000);</script>';
+  ?>
   <!-- header -->
   <?php include("header.php"); ?>
 
