@@ -1,3 +1,5 @@
+<?php include('select.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
     <!-- swiper -->
     <link rel="stylesheet" href="./assets/css/swiper.min.css">
     <!-- page -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/scss/main.css">
 
 </head>
 

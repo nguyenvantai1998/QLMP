@@ -42,9 +42,11 @@
                 }
 
                 h2{
-                    font-family: $ft-titles-2;
                     font-size: 25px;
                     color: $white;
+                    font-family: $ft-titles;
+                    font-weight: 300;
+                    line-height: 30px;
                 }
                 
             }
@@ -56,11 +58,14 @@
             .box{
                 @include col-16;
                 padding: 15px;
+                // background: red;
+                // margin-bottom: 30px;
 
                 > div{
-                    transition: all .5s;
+                    transition: all .3s;
                     overflow: hidden;
                     cursor: pointer;
+                    min-height: 350px;
 
                     &:hover{
                         border: 1px solid $cl-primary;
@@ -70,6 +75,8 @@
                     .img{
                         img{
                             @include img-res;
+                            width: 100%;
+                            height: 185px;
                         }
                     }
                     .name-price-sale{

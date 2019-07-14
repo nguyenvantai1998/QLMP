@@ -52,15 +52,50 @@
                     padding-right: 15px;
                     padding-left: 15px;
 
-                    >div{
+                    >.list-img-product{
                         margin: 0 0 18px;
                         border: 1px solid #c6c6c6;
                         padding: 10px;
 
-                        img{
+                        >img{
                             @include img-res;
+                            display: none;
+                            width: 325px;
+                            height: 325px;
+
+                        }
+                        .tabImgDetail_0{
+                            display: block;
                         }
                     }
+                    >.list-button-img{
+                        @include container-fb;
+                        margin-top: 30px;
+
+                        .buttonTabImgDetail{
+                            @include col-auto(20%);
+                            background: none;
+                            padding: 0;
+                            @include rs-ip-bt;
+                            width: 60px;
+                            height: 60px;
+                            padding: 10px;
+
+                            img{
+                                @include img-res;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            // &:focus{
+                            //     border: 1px solid #c6c6c6;
+                            // }
+                        }
+                        .buttonTabImgDetail-active{
+                            border: 1px solid #c6c6c6;
+                        }
+                    }
+                    
                 }
                 .right-content{
                     @include col-auto(53.33333333%);

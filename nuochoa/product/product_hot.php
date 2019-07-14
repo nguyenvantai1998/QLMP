@@ -1,8 +1,28 @@
 <div class="row-2 box-product">
 
     <?php
-        $table = query_select("SELECT * FROM sp, video	WHERE sp.MaSP = video.MaSP");
+
+        // pagination
+        $t = query_select("SELECT * FROM sp, video	WHERE sp.MaSP = video.MaSP AND sp.trangthai='new'");
+        $total = $t->rowCount();
+
+        $start = 0;
+        $limit = 10;
+
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $start = ($id-1)*$limit;
+        }
+        else
+        {
+            $id = 1;
+        }
+
+        $page = ceil($total/$limit);
+        $table = query_select("SELECT * FROM sp, video	WHERE sp.MaSP = video.MaSP  AND sp.trangthai='new' limit $start, $limit");
         $count = $table->rowCount();
+
         if ($count > 0) {
             foreach ($table as $row) {
             $masp = $row['MaSP'];
@@ -28,4 +48,34 @@
         }
 
     ?>
+
+</div>
+
+<div class="row-pagination">
+    <ul class="pagination">
+        <?php 
+            if($id > 1){
+        ?>
+            <li><a href="?id=<?php echo ($id-1); ?>">Prev</a></li>
+        <?php } ?>
+
+        <?php 
+            for($i=1;$i <= $page;$i++)
+            { ?>
+
+                <li><a href="?id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+
+            <?php
+            }
+        ?>
+
+        <?php 
+            if($id !=$page)
+            {
+                ?>
+                <li><a href="?id=<?php echo ($id+1); ?>">Next</a></li>
+            <?php
+            }
+        ?>
+    </ul>
 </div>
