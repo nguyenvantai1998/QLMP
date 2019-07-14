@@ -1,5 +1,4 @@
 <?php
-include ("./Query/admin_insert.php");
 if (isset($_POST["submit"]))
 {
   try {
