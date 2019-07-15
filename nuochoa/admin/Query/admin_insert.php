@@ -70,7 +70,6 @@ function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
 {
     try {
         include '../connect.php';
-        include '../select.php';
         $table=query_select("select * from nhacungcap where mancc='".$mancc."'");
         $count=$table->rowCount();
         if ($count>0)
@@ -104,8 +103,7 @@ function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
 function insert_ctkm($makm,$masp,$tgbd,$tgkt,$tilegiamgia,$ghichu)
 {
     try {
-        // include '..\..\connect.php';
-        // include '..\..\select.php';
+        include '../connect.php';
         $table=query_select("select * from ctkm where makm='".$makm."'");
         $count=$table->rowCount();
         if ($count>0)
