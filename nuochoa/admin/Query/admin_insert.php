@@ -27,19 +27,38 @@ function insert_loaisp($maloai, $tenloai,$mota)
 function insert_admin($tentk, $matkhau, $quyen)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include './connect.php';
+        include './select.php';
         $table=query_select("select * from qttk where tentk='".$tentk."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Tài khoản đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Tài khoản đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+        
+                echo '}, 1000);</script>';
             }
         else {
 
         $sql = "Insert into qttk (matkhau, quyen, tentk) values ('$matkhau',$quyen,'$tentk')";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+
+        echo "setTimeout(function () { Swal.fire({
+            type: 'success',
+            title: 'Đăng ký thành công !',
+            showConfirmButton: false,
+            timer: 1500
+          });";
+
+        echo '}, 1000);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
