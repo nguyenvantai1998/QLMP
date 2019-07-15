@@ -42,12 +42,12 @@
          <!-- <input type="text" class="form-control" placeholder="KM00xxx" name="maKM"> -->
          <select class="form-control" name="maKM">
                   <?php
-                     $tablesp = query_select("SELECT * FROM kmai");
-                     $countsp = $tablesp->rowCount();
-                     if ($countsp > 0) {
-                     foreach ($tablesp as $rowsp) {
+                     $tablekm = query_select("SELECT * FROM kmai");
+                     $countkm = $tablekm->rowCount();
+                     if ($countkm > 0) {
+                     foreach ($tablekm as $rowkm) {
                      ?>
-                  <option value="<?php echo $rowsp['MaKm'] ?>"><?php echo $rowsp['tenkm'];?></option>
+                  <option value="<?php echo $rowkm['MaKm'] ?>"><?php echo $rowkm['tenkm'];?></option>
                   <?php
                      }
                      }

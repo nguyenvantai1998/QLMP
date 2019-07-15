@@ -84,18 +84,33 @@ function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
 function insert_ctkm( $makm, $masp,$tgbd,$tgkt,$tilegiamgia,$ghichu)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '../select.php';
         $table=query_select("select * from ctkm where makm='".$makm."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Mã khuyến mãi đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Chương trình khuyến mãi đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
         $sql = "Insert into ctkm (ghichu, makm, masp, tgbd,tgkt,tilegiamgia) values ('$ghichu','$makm','$masp','$tgbd','$tgkt',$tilegiamgia)";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'Thêm chương trình khuyến mãi thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+        echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

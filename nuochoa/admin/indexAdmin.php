@@ -57,6 +57,7 @@
 
             <!-- set page show -->
             <?php 
+               include("../select.php");
                 include("Query/admin_insert.php");
                 if(isset($_GET['page']))
                 {
@@ -68,6 +69,12 @@
                     else if($page=='them_san_pham')
                     {
                         include("./Add/product.php");
+                    }else if($page=='list_ct_km')
+                    {
+                        include("./Select/list-ctkm.php");
+                    }else if($page=='them_ct_km')
+                    {
+                        include("./Add/add-dicount.php");
                     }
                 }
                 else
