@@ -1,14 +1,43 @@
 $(document).ready(function () {
 
+  // search
+  $('#product_s').keyup(function(){
+    var query = $(this).val();
+    if(query != '')
+    {
+      $.ajax({
+        url: "search.php",
+        method: "POST",
+        data: { query: query },
+        success: function(data)
+        {
+          $('#productlist_s').show();
+          $('#productlist_s').html(data);
+        }
+      })
+    }
+    else
+    {
+      $('#productlist_s').hide();
+      $('#productlist_s').html("");
+    }
+
+
+  })
+
+
+  // slide banner
   var swiper = new Swiper('.swiper-container', {
     loop: true,
     slidesPerView: 1,
+    // slidesPerView: 'auto',
     spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
   });
+
   // AOS.init();
 
   $('.btn-menu').click(function () {

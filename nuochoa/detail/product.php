@@ -4,9 +4,7 @@
 <?php
     $table = query_select("SELECT * FROM sp, nhacungcap, video WHERE sp.MaNcc = nhacungcap.MaNCC AND sp.MaSP = video.MaSP AND sp.MaSP= '$masp'");
     $count = $table->rowCount();
-
-    echo $count['Masp'];
-
+    // echo $count['Masp'];
     if ($count > 0) {
         foreach ($table as $row) {
 ?>

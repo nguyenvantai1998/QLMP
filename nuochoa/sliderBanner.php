@@ -2,15 +2,15 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a href="#">
-                    <img src="./assets/img/3_happyfamily.jpg" alt="banner">
+                    <img src="./picture/banne3.jpg" alt="banner">
                 </a>
             </div>
             <div class="swiper-slide"><a href="#">
-                    <img src="./assets/img/3_happyfamily.jpg" alt="banner">
+                    <img src="./picture/banner-1.4.jpg" alt="banner">
                 </a>
             </div>
             <div class="swiper-slide"><a href="#">
-                    <img src="./assets/img/3_happyfamily.jpg" alt="banner">
+                    <img src="./picture/banne3.jpg" alt="banner">
                 </a>
             </div>
         </div>

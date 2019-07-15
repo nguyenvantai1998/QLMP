@@ -115,27 +115,6 @@
             }
         }
 
-        .row-pagination{
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-
-            .pagination{
-                @include container-fb;
-
-                li{
-
-                    a{
-                        color: black;
-                        padding: 10px;
-                        display: block;
-                        margin-left: 10px;
-                        border: 1px solid black;
-                    }
-                }
-            }
-        }
-
         .row-2-form{
             display: unset;
         }

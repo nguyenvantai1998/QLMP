@@ -1,11 +1,5 @@
 <?php
-    session_start();
-    $check ="<script>localStorage.getItem('key')</script>";
-    echo $check;
-    if($check){
-        // header("location:admin/indexAdmin.php");
-        echo $check;
-    }
+session_start();
     include("select.php");   
     $user = $password = "";
     $_SESSION['helloTitle']=1;
@@ -155,23 +149,23 @@ foreach($query as $row){
 
     <!-- jQuery -->
     <script src="./assets/js/plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <!-- <script>
+    <script>
     $.widget.bridge('uibutton', $.ui.button)
-    </script> -->
+    </script>
     <!-- Bootstrap 4 -->
-    <!-- <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- iCheck -->
-    <!-- <script src="assets/plugins/iCheck/icheck.min.js"></script> -->
+    <script src="assets/plugins/iCheck/icheck.min.js"></script>
     <!-- FastClick -->
-    <!-- <script src="assets/plugins/fastclick/fastclick.js"></script> -->
+    <script src="assets/plugins/fastclick/fastclick.js"></script>
     <!-- AdminLTE App -->
-    <!-- <script src="assets/js/adminlte.js"></script> -->
+    <script src="assets/js/adminlte.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <!-- <script>
+    <script>
     $(function() {
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',
@@ -179,7 +173,7 @@ foreach($query as $row){
             increaseArea: '20%' // optional
         })
     })
-    </script> -->
+    </script>
 </body>
 
 </html>

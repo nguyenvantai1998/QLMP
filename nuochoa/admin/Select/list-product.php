@@ -1,3 +1,5 @@
+<?php include("./../select.php"); ?>
+
 <!-- Small boxes (Stat box) -->
 <div class="row">
     <div class="col-lg-3 col-6">

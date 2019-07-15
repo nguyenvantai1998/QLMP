@@ -132,6 +132,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="./assets/js/swiper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="./assets/js/custome.js"></script>
 </body>
 

@@ -1,9 +1,8 @@
 <div class="row-2 box-product">
-
+    <!-- select -->
     <?php
-
         // pagination
-        $t = query_select("SELECT * FROM sp, video	WHERE sp.MaSP = video.MaSP AND sp.trangthai='new'");
+        $t = query_select("SELECT * FROM sp, video, ctkm, kmai	WHERE sp.MaSP = video.MaSP AND sp.trangthai='new' AND sp.MaSP = ctkm.MaSP AND ctkm.MaKm = kmai.MaKm");
         $total = $t->rowCount();
 
         $start = 0;
@@ -20,9 +19,8 @@
         }
 
         $page = ceil($total/$limit);
-        $table = query_select("SELECT * FROM sp, video	WHERE sp.MaSP = video.MaSP  AND sp.trangthai='new' limit $start, $limit");
+        $table = query_select("SELECT * FROM sp, video, ctkm, kmai WHERE sp.MaSP = video.MaSP  AND sp.trangthai='new' AND sp.MaSP = ctkm.MaSP AND ctkm.MaKm = kmai.MaKm limit $start, $limit");
         $count = $table->rowCount();
-
         if ($count > 0) {
             foreach ($table as $row) {
             $masp = $row['MaSP'];
@@ -34,10 +32,10 @@
                 <img src="<?php echo $row['URLHinh']; ?>" alt="">
             </div>
             <div class="name-price-sale">
-                <a href="detail.php?masp=<?php echo $masp ?>">
-                    <p class="name"><?php echo $row['Tensp']; ?></p>
-                    <p class="price"><?php echo $row['Gia']; ?> VNĐ</p>
-                    <p class="price-sale">90.000.000 VNĐ</p>
+                <a href="?p=detail&&masp=<?php echo $masp ?>">
+                    <p class="name"><?php echo mysubstr($row['Tensp'],15) ?></p>
+                    <p class="price"><?php echo number_format( $row['Gia'] ); ?> VNĐ</p>
+                    <p class="price-sale"><?php echo number_format( ($row['Gia'] * $row['Tilegiamgia'])/100 ); ?> VNĐ</p>
                 </a>
             </div>
         </div>
@@ -51,31 +49,43 @@
 
 </div>
 
-<div class="row-pagination">
-    <ul class="pagination">
-        <?php 
-            if($id > 1){
+<!-- pagiation -->
+<?php 
+    if($count >=8)
+    {
         ?>
-            <li><a href="?id=<?php echo ($id-1); ?>">Prev</a></li>
-        <?php } ?>
+    <div class="row-pagination">
+        <ul class="pagination">
+            <?php 
+                if($id > 1){
+            ?>
+                <li><a href="?id=<?php echo ($id-1); ?>">Prev</a></li>
+            <?php } ?>
 
-        <?php 
-            for($i=1;$i <= $page;$i++)
-            { ?>
+            <?php 
+                for($i=1;$i <= $page;$i++)
+                { ?>
 
-                <li><a href="?id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                    <li><a href="?id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
 
-            <?php
-            }
-        ?>
+                <?php
+                }
+            ?>
 
-        <?php 
-            if($id !=$page)
-            {
-                ?>
-                <li><a href="?id=<?php echo ($id+1); ?>">Next</a></li>
-            <?php
-            }
-        ?>
-    </ul>
-</div>
+            <?php 
+                if($id !=$page)
+                {
+                    ?>
+                    <li><a href="?id=<?php echo ($id+1); ?>">Next</a></li>
+                <?php
+                }
+            ?>
+        </ul>
+    </div>
+
+        <?php
+    }
+
+?>
+
+

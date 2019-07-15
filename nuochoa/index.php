@@ -1,8 +1,15 @@
 <!-- header -->
 <?php include("header.php"); ?>
 
-<!-- slider banner -->
-<?php include("sliderBanner.php"); ?>
+<!-- set page show -->
+<?php 
+    if(!isset($_GET['p']))
+    {
+        include("sliderBanner.php");
+    }
+?>
+
+
 
 </div>
 </div>
@@ -12,74 +19,86 @@
 <!-- main -->
 <main id="main">
 
-    <!-- set page show -->
-    <?php 
-        if(isset($_GET['page']))
-        {
-            $page = $_GET['page'];
-            if($page == 'sp_nam'){
-                include('product-type.php');
-            }
+<!-- set page show -->
+<?php 
+    if(isset($_GET['p']))
+    {
+        $page = $_GET['p'];
+        if($page == 'type'){
+            include('product-type.php');
         }
-        else
-        { ?>
+        else if($page == 'detail')
+        {
+            include('detail.php');
+        }
+        else if($page == 'page')
+        {
+            include('page.php');
+        }
+        else if($page == 'video')
+        {
+            include('video.php');
+        }
+        else if($page == 'search')
+        {  
+            include('search.php');
+        }
+    }
+    else
+    { ?>
 
-        <!-- main 1 -->
-        <div class="main-1 m-container">
+    <!-- main 1 -->
+    <div class="main-1 m-container">
 
-            <?php include("slideBar.php"); ?>
+        <?php include("slideBar.php"); ?>
 
-            <!-- product -->
-            <div class="boxProduct">
+        <!-- product -->
+        <div class="boxProduct">
 
-                <!-- combo -->
-                <section class="product-1 product-combo">
-
-                    <div class="pr-container">
-
-                        <!-- title -->
-                        <div class="row-1 title">
-                            <div class="bg-tt-1">
-                                <h2>Sản Phẩm Mới</h2>
-                            </div>
-                        </div>
-
-                        <!-- list product hot -->
-                        <?php include("product/product_hot.php"); ?>
-
-                    </div>
-
-                </section>
-            </div>
-        </div>
-
-        <!-- main 2 -->
-        <div class="main-2 m2-container">
-            <!-- liquidation -->
-            <section class="product-2 product-liquidation">
+            <!-- combo -->
+            <section class="product-1 product-combo">
 
                 <div class="pr-container">
+
+                    <!-- title -->
                     <div class="row-1 title">
                         <div class="bg-tt-1">
-                            <h2>Sản Phẩm Sale</h2>
+                            <h2>News</h2>
                         </div>
                     </div>
 
-                    <!-- list sản phẩm giảm giá -->
-                    <?php include("./product/product_sale.php"); ?>
+                    <!-- list product hot -->
+                    <?php include("product/product_hot.php"); ?>
 
                 </div>
 
             </section>
         </div>
+    </div>
 
-    <?php
-        }
-    ?>
+    <!-- main 2 -->
+    <div class="main-2 m2-container">
+        <!-- liquidation -->
+        <section class="product-2 product-liquidation">
 
+            <div class="pr-container">
+                <div class="row-1 title">
+                    <div class="bg-tt-1">
+                        <h2>Sales</h2>
+                    </div>
+                </div>
 
+                <!-- list sản phẩm giảm giá -->
+                <?php include("./product/product_sale.php"); ?>
 
+            </div>
 
+        </section>
+    </div>
+
+<?php
+    }
+?>
 
 </main>
 

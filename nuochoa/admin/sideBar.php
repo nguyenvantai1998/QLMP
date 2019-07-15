@@ -51,12 +51,6 @@
                     <p>Thêm nhà phân phối</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="indexAdmin.php?page=them_ct_km" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Thêm CT khuyến mãi</p>
-                  </a>
-                </li>
               </ul>
             </li>
           </ul>
