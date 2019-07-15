@@ -1,4 +1,11 @@
 <?php
+
+    // if(!isset($_SERVER['HTTP_REFERER'])){
+    //     // redirect them to your desired location
+    //     header('location:../index.php');
+    //     exit;
+    // }
+
   session_start();
   if($_SESSION['helloTitle']==1){
       echo '<script type="text/javascript">';
@@ -48,20 +55,25 @@
     <section class="content">
         <div class="container-fluid">
 
-            <!-- FORM ADD PRODUCT -->
-
+            <!-- set page show -->
             <?php 
-          include("Query/admin_insert.php");
-		    	if(isset($_GET['page'])){
-			     	$page = $_GET['page'];
-		    		if($page=='them_nha_phan_phoi'){
-				      	include("./Add/add-distribution.php");
-            }else if($page=='them_san_pham'){
-              include("./Add/product.php");
-            }
-			}else{
-        include("./Select/list-product.php");
-      }
+                include("Query/admin_insert.php");
+                if(isset($_GET['page']))
+                {
+                    $page = $_GET['page'];
+                    if($page=='them_nha_phan_phoi')
+                    {
+                        include("./Add/add-distribution.php");
+                    }
+                    else if($page=='them_san_pham')
+                    {
+                        include("./Add/product.php");
+                    }
+                }
+                else
+                {
+                    include("./Select/list-product.php");
+                }
           ?>
             <!-- END FORM -->
 

@@ -60,4 +60,6 @@ $(document).ready(function () {
     $('.tabImgDetail_0, .tabImgDetail_2, .tabImgDetail_3, .tabImgDetail_4, .tabImgDetail_1').hide();
   })
 
+  
+
 })

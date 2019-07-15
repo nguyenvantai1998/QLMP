@@ -17,7 +17,7 @@
                 <p class="name"><?php echo $row['Tensp']; ?></p>
                 <p class="price">
                     <span><?php echo $row['Gia']; ?> VNĐ</span>
-                    <span class="sale">(- <?php echo $row['HTKM']; ?>)</span>
+                    <span class="sale">(- <?php echo $row['Tilegiamgia']; ?>%)</span>
                 </p>
                 <p class="price-sale"><?php echo ($row['Gia'] * $row['Tilegiamgia'])/100; ?> VNĐ</p>
             </div>

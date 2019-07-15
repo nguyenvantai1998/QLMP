@@ -7,7 +7,7 @@
         $total = $t->rowCount();
 
         $start = 0;
-        $limit = 10;
+        $limit = 8;
 
         if(isset($_GET['id']))
         {

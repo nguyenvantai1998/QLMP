@@ -145,19 +145,19 @@ function insert_quanly($manv,$maql)
 }
 
 
-function insert_sp($masp,$tensp,$gia,$maloai,$soluong,$mancc,$ngaynhaphang,$ngaysanxuat,$trangthai,$mota,$hansudung,$dungtich)
+function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat, $hansudung, $dungtich, $mota, $ngaynhaphang, $trangthai)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
-        $table=query_select("select * from sp where masp='".$masp."'");
+        include '../connect.php';
+        include '../select.php';
+        $table=query_select("select * from sp where MaSP='".$masp."'");
         $count=$table->rowCount();
         if ($count>0)
             {
                echo "<script>alert('Mã sản phẩm đã tồn tại')</script>";
             }
         else {
-        $sql = "Insert into sp (masp,tensp,gia,maloai,soluong,mancc,ngaynhaphang,ngaysanxuat,trangthai,mota,hansudung,dungtich) values ('$masp','$tensp',$gia,'$maloai',$soluong,'$mancc','$ngaynhaphang','$ngaysanxuat','$trangthai','$mota',$hansudung,$dungtich)";
+        $sql = "INSERT INTO `sp`(`MaSP`, `Maloai`, `Tensp`, `Gia`, `Soluong`, `MaNcc`, `Ngaysanxuat`, `hansudung`, `dungtich`, `Mota`, `Ngaynhaphang`, `trangthai`) VALUES ('$masp', '$maloai', '$tensp', '$gia', '$soluong', '$mancc', '$ngaysanxuat', '$hansudung', '$dungtich', '$mota', '$ngaynhaphang', '$trangthai')";
         $conn->exec($sql);
         $conn=null;
         }

@@ -34,17 +34,17 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link active">
+                  <a href="indexAdmin.php" class="nav-link active">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>List sản phẩm</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a href="indexAdmin.php?page=them_san_pham" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Thêm sản phẩm</p>
                   </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=them_nha_phan_phoi" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>

@@ -1,21 +1,32 @@
+<!-- header -->
+<?php include("header.php"); ?>
 
-    <!-- header -->
-    <?php include("header.php"); ?>
+<!-- slider banner -->
+<?php include("sliderBanner.php"); ?>
 
-        <!-- slider banner -->
-        <?php include("sliderBanner.php"); ?>
-
-            </div>
-        </div>
-    </header> <!-- /header -->
+</div>
+</div>
+</header> <!-- /header -->
 
 
-    <!-- main -->
-    <main id="main">
+<!-- main -->
+<main id="main">
+
+    <!-- set page show -->
+    <?php 
+        if(isset($_GET['page']))
+        {
+            $page = $_GET['page'];
+            if($page == 'sp_nam'){
+                include('product-type.php');
+            }
+        }
+        else
+        { ?>
 
         <!-- main 1 -->
         <div class="main-1 m-container">
-            
+
             <?php include("slideBar.php"); ?>
 
             <!-- product -->
@@ -29,7 +40,7 @@
                         <!-- title -->
                         <div class="row-1 title">
                             <div class="bg-tt-1">
-                                <h2>COMBO GIÁ TỐT</h2>
+                                <h2>Sản Phẩm Mới</h2>
                             </div>
                         </div>
 
@@ -50,7 +61,7 @@
                 <div class="pr-container">
                     <div class="row-1 title">
                         <div class="bg-tt-1">
-                            <h2>Thanh Lý Mỹ Phẩm Lancome</h2>
+                            <h2>Sản Phẩm Sale</h2>
                         </div>
                     </div>
 
@@ -62,6 +73,15 @@
             </section>
         </div>
 
-    </main>
+    <?php
+        }
+    ?>
 
-    <?php include("footer.php") ?>
+
+
+
+
+</main>
+
+<!-- footer -->
+<?php include("footer.php") ?>

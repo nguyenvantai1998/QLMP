@@ -1,6 +1,4 @@
-<?php
-include ('select.php')
-?>
+<?php include ('select.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +10,7 @@ include ('select.php')
     <!-- swiper -->
     <link rel="stylesheet" href="./assets/css/swiper.min.css">
     <!-- page -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/scss/main.css">
 
 </head>
 
@@ -248,7 +246,7 @@ include ('select.php')
 
                                 </li>
                                 <li>
-                                    <a href="#" class="expandable">
+                                    <a href="index.php?page=sp_nam" class="expandable">
                                         <span>Cho Nam</span>
                                     </a>
                                 </li>
