@@ -23,7 +23,7 @@ function insert_loaisp($maloai, $tenloai,$mota)
     }
 }
 
-
+// DONE
 function insert_admin($tentk, $matkhau, $quyen)
 {
     try {
@@ -65,6 +65,7 @@ function insert_admin($tentk, $matkhau, $quyen)
     }
 }
 
+// DONE
 function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
 {
     try {
@@ -103,18 +104,34 @@ function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
 function insert_ctkm( $makm, $masp,$tgbd,$tgkt,$tilegiamgia,$ghichu)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '..\..\connect.php';
+        include '..\..\select.php';
         $table=query_select("select * from ctkm where makm='".$makm."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Mã khuyến mãi đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Mã chương trình khuyến mãi đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
-        $sql = "Insert into ctkm (ghichu, makm, masp, tgbd,tgkt,tilegiamgia) values ('$ghichu','$makm','$masp','$tgbd','$tgkt',$tilegiamgia)";
+        $sql = "Insert into ctkm(ghichu, makm, masp, tgbd,tgkt,tilegiamgia) values ('$ghichu','$makm','$masp','$tgbd','$tgkt',$tilegiamgia)";
         $conn->exec($sql);
         $conn=null;
+        echo "<script>alert('hello');</script>";
+        echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'Thêm chương trình khuyến mãi thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
@@ -163,7 +180,7 @@ function insert_quanly($manv,$maql)
     }
 }
 
-
+// Tài làm
 function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat, $hansudung, $dungtich, $mota, $ngaynhaphang, $trangthai)
 {
     try {

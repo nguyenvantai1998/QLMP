@@ -8,6 +8,7 @@
 
   session_start();
   if($_SESSION['helloTitle']==1){
+      echo '<script>localStorage.setItem("key", "admin");</script>';
       echo '<script type="text/javascript">';
 
       echo "setTimeout(function () { Swal.fire({
@@ -57,6 +58,7 @@
 
             <!-- set page show -->
             <?php 
+                include("../select.php");
                 include("Query/admin_insert.php");
                 if(isset($_GET['page']))
                 {
@@ -68,6 +70,9 @@
                     else if($page=='them_san_pham')
                     {
                         include("./Add/product.php");
+                    }else if($page=='them_ct_km')
+                    {
+                        include("./Add/add-dicount.php");
                     }
                 }
                 else
