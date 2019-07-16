@@ -52,11 +52,17 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="indexAdmin.php?page=list_km" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Danh sách khuyến mãi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="indexAdmin.php?page=list_ct_km" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Chương trình khuyến mãi</p>
                   </a>
-                </li>
+                </li>   
               </ul>
             </li>
           </ul>
