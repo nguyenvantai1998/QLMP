@@ -19,9 +19,9 @@
         <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>Sản Phẩm</h3>
+                <h3>Khuyến mãi</h3>
 
-                <p>Danh sách sản phẩm...</p>
+                <p>Danh sách khuyến mãi...</p>
             </div>
             <div class="icon">
                 <i class="ion ion-android-list"></i>
@@ -32,12 +32,12 @@
     <!-- ./col -->
     <div class="col-lg-3 col-6">
         <!-- small box -->
-        <a href="indexAdmin.php?page=them_san_pham">
+        <a href="indexAdmin.php?page=them_km">
             <div class="small-box bg-danger">
                 <div class="inner">
                     <h3>Thêm</h3>
 
-                    <p>Thêm sản phẩm mới...</p>
+                    <p>Thêm khuyến mãi...</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-plus"></i>
@@ -55,20 +55,16 @@
         <thead>
             <tr>
                 <th>STT</th>
-                <th>Mã Sản Phẩm</th>
-                <th>Mã Loại</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá</th>
-                <th>Số Lượng</th>
-                <th>Trạng Thái</th>
-                <th>MaNCC</th>
+                <th>Mã Khuyến mãi</th>
+                <th>Tên KM</th>
+                <th>Hình thức</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
 
         <?php
-            $table = query_select("SELECT * FROM sp");
+            $table = query_select("SELECT * FROM kmai");
             $count = $table->rowCount();
             $stt = 1;
             if ($count > 0) {
@@ -77,15 +73,11 @@
 
             <tr>
                 <td><?php echo $stt++; ?></td>
-                <td><?php echo $row['MaSP'] ?></td>
-                <td><?php echo $row['Maloai'] ?></td>
-                <td><?php echo $row['Tensp'] ?></td>
-                <td><?php echo $row['Gia'] ?></td>
-                <td><?php echo $row['Soluong'] ?></td>
-                <td><?php echo $row['trangthai'] ?></td>
-                <td><?php echo $row['MaNcc'] ?></td>
+                <td><?php echo $row['MaKm'] ?></td>
+                <td><?php echo $row['tenkm'] ?></td>
+                <td><?php echo $row['HTKM'] ?></td>
                 <td>
-                    <a id="example" href="?masp=<?php echo $row['MaSP']; ?>">
+                    <a id="example" href="?makm=<?php echo $row['MaKm']; ?>">
                         <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalDetail">
                             <i class="fas fa-search"></i>
                         </button>
@@ -102,7 +94,7 @@
             }
             else
             {
-                echo "<h2>Hiện tại chưa có sản phẩm...</h2>";
+                echo "<h2>Hiện tại chưa khuyến mãi...</h2>";
             }
         ?>
         </tbody>

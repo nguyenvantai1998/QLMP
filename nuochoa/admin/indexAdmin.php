@@ -58,6 +58,7 @@
             <!-- set page show -->
             <?php 
                 include("Query/admin_insert.php");
+                include("../select.php");
                 if(isset($_GET['page']))
                 {
                     $page = $_GET['page'];
@@ -68,6 +69,20 @@
                     else if($page=='them_san_pham')
                     {
                         include("./Add/product.php");
+                    }
+                    else if($page=='list_ct_km')
+                    {
+                        include("./Select/list-ctkm.php");
+                    }
+                    else if($page=='them_ct_km')
+                    {
+                        include("./Add/add-dicount.php");
+                    }else if($page=='list_km')
+                    {
+                        include("./Select/list-km.php");
+                    }else if($page=='them_km')
+                    {
+                        include("./Add/add-km.php");
                     }
                 }
                 else

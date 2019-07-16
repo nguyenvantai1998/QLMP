@@ -46,9 +46,15 @@
                   </a>
                 </li> -->
                 <li class="nav-item">
-                  <a href="indexAdmin.php?page=them_nha_phan_phoi" class="nav-link">
+                  <a href="indexAdmin.php?page=list_km" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Thêm nhà phân phối</p>
+                    <p>List khuyến mãi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="indexAdmin.php?page=list_ct_km" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>List chương trình KM</p>
                   </a>
                 </li>
               </ul>
