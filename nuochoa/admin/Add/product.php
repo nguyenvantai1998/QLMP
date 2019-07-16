@@ -35,19 +35,6 @@
                 $mota = $_POST['textMota'];
                 $soluong = $_POST['txtSoluong'];
                 insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat, $hansudung, $dungtich, $mota, $ngaynhaphang, $trangthai);
-                
-                echo 
-                "
-                    <script type='text/javascript'>
-                        setTimeout(function () { 
-                            Swal.fire({
-                                type: 'success',
-                                title: 'Thêm sản phẩm thành công !',
-                                showConfirmButton: false
-                            });
-                        }, 100);
-                    </script>
-                ";
             }
             catch(Throwable $th){}
         }
@@ -112,7 +99,7 @@
                         <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 if (empty($_POST["slMaloai"])) {
-                                    echo "<span class='badge badge-danger'>Nhập mã mã loại!</span>";
+                                    echo "<span class='badge badge-danger'>Nhập mã loại!</span>";
                                 }
                             }
                         ?>

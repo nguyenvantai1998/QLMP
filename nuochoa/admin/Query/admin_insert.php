@@ -23,34 +23,49 @@ function insert_loaisp($maloai, $tenloai,$mota)
     }
 }
 
-
+// DONE
 function insert_admin($tentk, $matkhau, $quyen)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include 'connect.php';
+        include 'select.php';
         $table=query_select("select * from qttk where tentk='".$tentk."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Tài khoản đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Tài khoản đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
 
         $sql = "Insert into qttk (matkhau, quyen, tentk) values ('$matkhau',$quyen,'$tentk')";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'Đăng ký thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
     }
 }
-
+//DONE
 function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
 {
     try {
         include '../connect.php';
-        include '../select.php';
+        // include '../select.php';
         $table=query_select("select * from nhacungcap where mancc='".$mancc."'");
         $count=$table->rowCount();
         if ($count>0)
@@ -80,43 +95,73 @@ function insert_ncc( $mancc, $tenncc,$diachi,$masothue,$mota)
         echo "connection failed: " . $e->getMessage();
     }
 }
-
+//DONE
 function insert_ctkm( $makm, $masp,$tgbd,$tgkt,$tilegiamgia,$ghichu)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '.\..\..\select.php';
         $table=query_select("select * from ctkm where makm='".$makm."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Mã khuyến mãi đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Chương trình khuyến mãi đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
         $sql = "Insert into ctkm (ghichu, makm, masp, tgbd,tgkt,tilegiamgia) values ('$ghichu','$makm','$masp','$tgbd','$tgkt',$tilegiamgia)";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { Swal.fire({
+            type: 'success',
+            title: 'Thêm chương trình khuyến mãi thành công!',
+            showConfirmButton: false,
+            timer: 1500
+          });";
+        echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
     }
 }
-
+//DONE
 function insert_kmai($htkm,$makm,$tenkm)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '.\..\..\select.php';
         $table=query_select("select * from kmai where makm='".$makm."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Mã khuyến mãi đã có')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Khuyến mãi đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
         $sql = "Insert into kmai (htkm,makm,tenkm) values ('$htkm','$makm','$tenkm')";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'Thêm khuyến mãi thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
@@ -144,22 +189,37 @@ function insert_quanly($manv,$maql)
     }
 }
 
-
+//DONE
 function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat, $hansudung, $dungtich, $mota, $ngaynhaphang, $trangthai)
 {
     try {
         include '../connect.php';
-        include '../select.php';
+        // include '../select.php';
         $table=query_select("select * from sp where MaSP='".$masp."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Mã sản phẩm đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Sản phẩm đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
         $sql = "INSERT INTO `sp`(`MaSP`, `Maloai`, `Tensp`, `Gia`, `Soluong`, `MaNcc`, `Ngaysanxuat`, `hansudung`, `dungtich`, `Mota`, `Ngaynhaphang`, `trangthai`) VALUES ('$masp', '$maloai', '$tensp', '$gia', '$soluong', '$mancc', '$ngaysanxuat', '$hansudung', '$dungtich', '$mota', '$ngaynhaphang', '$trangthai')";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'thêm sản phẩm thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

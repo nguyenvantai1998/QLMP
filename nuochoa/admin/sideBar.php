@@ -39,12 +39,18 @@
                     <p>List sản phẩm</p>
                   </a>
                 </li>
-                <!-- <li class="nav-item">
-                  <a href="indexAdmin.php?page=them_san_pham" class="nav-link">
+                <li class="nav-item">
+                  <a href="indexAdmin.php?page=loai_sp" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Thêm sản phẩm</p>
+                    <p>Loại sản phẩm</p>
                   </a>
-                </li> -->
+                </li>
+                <li class="nav-item">
+                  <a href="indexAdmin.php?page=list_npp" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>List nhà phân phối</p>
+                  </a>
+                </li>
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=list_km" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>

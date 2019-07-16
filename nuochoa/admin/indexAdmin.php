@@ -62,7 +62,11 @@
                 if(isset($_GET['page']))
                 {
                     $page = $_GET['page'];
-                    if($page=='them_nha_phan_phoi')
+                    if($page=='list_npp')
+                    {
+                        include("./Select/list-distribution.php");
+                    }
+                    else if($page=='them_npp')
                     {
                         include("./Add/add-distribution.php");
                     }
@@ -83,6 +87,10 @@
                     }else if($page=='them_km')
                     {
                         include("./Add/add-km.php");
+                    }
+                    else if($page=='loai_sp')
+                    {
+                        include("./Select/list-loai-sp.php");
                     }
                 }
                 else

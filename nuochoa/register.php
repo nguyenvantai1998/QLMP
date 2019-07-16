@@ -1,13 +1,14 @@
 <?php
+  include("./admin/Query/admin_insert.php");
 	$userReg = $passwordReg = $rePasswordReg = "";
 	$roleId = 2;
     if (isset($_POST["submit-reg"])) {
-        if ($_POST['user-reg'] != "" && $_POST['password-reg'] != "" && $_POST['re-password-reg'] != "") {
+        if ($_POST['user-reg'] != "" && $_POST['password-reg'] != "" && $_POST['re-password-reg'] != "" && $_POST['password-reg']==$_POST['re-password-reg']) {
             try {    
                 $userReg = $_POST['user-reg'];
                 $passwordReg = $_POST['password-reg'];
-				$rePasswordReg = $_POST['re-password-reg'];
-				// insert_admin($userReg, $passwordReg,"2");
+			        	$rePasswordReg = $_POST['re-password-reg'];
+		         		insert_admin($userReg, $passwordReg,"2");
             } catch (Throwable $th) {
             }
         } else {
@@ -71,11 +72,6 @@
         </div>
         <div class="row">
           <div class="col-8">
-            <!-- <div class="checkbox icheck">
-              <label>
-                <input type="checkbox"> I agree to the <a href="#">terms</a>
-              </label>
-            </div> -->
           </div>
           <!-- /.col -->
           <div class="col-4">
