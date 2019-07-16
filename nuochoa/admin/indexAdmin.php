@@ -92,6 +92,10 @@
                     {
                         include("./Select/list-loai-sp.php");
                     }
+                    else if($page=='them_loai')
+                    {
+                        include("./Add/add-category.php");
+                    }
                 }
                 else
                 {

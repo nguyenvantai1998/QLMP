@@ -3,18 +3,33 @@
 function insert_loaisp($maloai, $tenloai,$mota)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '.\..\..\select.php';
         $table=query_select("select * from loaisp where maloai='".$maloai."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Mã đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Loại đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
             $sql = "Insert into loaisp(maloai, tenloai,mota) values ('$maloai','$tenloai','$mota') ";
             $conn->exec($sql);
             $conn=null;
+            echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'Thêm loại thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
         }
        
         
@@ -22,7 +37,6 @@ function insert_loaisp($maloai, $tenloai,$mota)
         echo "connection failed: " . $e->getMessage();
     }
 }
-
 // DONE
 function insert_admin($tentk, $matkhau, $quyen)
 {
