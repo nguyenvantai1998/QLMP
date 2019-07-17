@@ -58,6 +58,7 @@
             <!-- set page show -->
             <?php 
                 include("Query/admin_insert.php");
+                include("Query/admin_update.php");
                 include("../select.php");
                 if(isset($_GET['page']))
                 {
@@ -103,6 +104,10 @@
                     else if($page=='them_tin_tuc')
                     {
                         include("./Add/add-news.php");
+                    }
+                    else if($page=='doi_mk')
+                    {
+                        include("./Update/update-password.php");
                     }
                 }
                 else

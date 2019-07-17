@@ -29,8 +29,8 @@ function update_loaisp($maloai, $tenloai,$mota)
 function update_admin($tentk, $matkhau, $quyen)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '.\..\..\select.php';
         $table=query_select("select * from qttk where tentk='".$tentk."'");
         $count=$table->rowCount();
         if ($count==0)
@@ -43,6 +43,47 @@ function update_admin($tentk, $matkhau, $quyen)
         $conn->exec($sql);
         $conn=null;             
         echo "<script>alert('đã cập nhật dữ liệu')</script>";
+        }
+    } catch (PDOException $e) {
+        echo "connection failed: " . $e->getMessage();
+    }
+}
+
+function update_password($tentk, $matkhau, $matkhaumoi)
+{
+    try {
+        include '../connect.php';
+        // include '.\..\..\select.php';
+        $table=query_select("select * from qttk where tentk='".$tentk."' and matkhau='".$matkhau."'");
+        $count=$table->rowCount();
+        if ($count==0)
+            {
+                echo '<script type="text/javascript">';
+
+                echo "setTimeout(function () { Swal.fire({
+                      type: 'error',
+                      title: 'Sai mật khẩu !',
+                      showConfirmButton: false,
+                      timer: 1500
+                      });";
+
+                echo '}, 1000);</script>';
+            }
+        else {
+
+        $sql = "update qttk set matkhau='$matkhaumoi' where tentk='$tentk'";
+        $conn->exec($sql);
+        $conn=null;             
+        echo '<script type="text/javascript">';
+
+                echo "setTimeout(function () { Swal.fire({
+                      type: 'success',
+                      title: 'Đã đổi mật khẩu !',
+                      showConfirmButton: false,
+                      timer: 1500
+                      });";
+
+                echo '}, 1000);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

@@ -3,7 +3,6 @@
     include("select.php");   
     $user = $password = "";
     $_SESSION['helloTitle']=1;
- 
     if($_SESSION['isLoged']){
        header("location:admin/indexAdmin.php");
     }
@@ -11,6 +10,7 @@
     if (isset($_POST["submit"])) {
         if ($_POST['user'] != "" && $_POST['password'] != "") {
             try {    
+                $_SESSION['userSession'] = $_POST['user'];
                 $user = $_POST['user'];
                 $password = $_POST['password'];
                 $query = query_select("select * from qttk where qttk.TenTK='$user' and qttk.Matkhau='$password'");

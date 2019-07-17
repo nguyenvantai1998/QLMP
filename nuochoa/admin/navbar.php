@@ -1,6 +1,7 @@
 <?php
   if (isset($_POST['logOut'])) {
     logout();
+  //  $_SESSION["userSession"]
   }
   function logout() {
     session_destroy();
@@ -15,6 +16,9 @@
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="../index.php" class="nav-link">Trang chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="indexAdmin.php?page=doi_mk" class="nav-link">Đổi mật khẩu</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
         <form action="" method="post">

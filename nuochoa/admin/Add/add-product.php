@@ -9,7 +9,7 @@
         <div class="col-sm-10">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control" placeholder="Mã nhà cung cấp" name="maNhaCC">
+                    <input type="text" class="form-control" placeholder="Mã nhà cung cấp" name="maNhaCC" >
                     <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 if (empty($_POST["maNhaCC"])) {

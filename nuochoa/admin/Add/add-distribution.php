@@ -1,5 +1,6 @@
 <!-- FORM -->
 <?php
+session_start();
     if (isset($_POST["submit"])) {
         if ($_POST['maNhaCC'] != "" && $_POST['tenNhaCC'] != "" && $_POST['diachiNhaCC'] != "" && $_POST['thueNhaCC'] != "" && $_POST['motaNhaCC'] != "") {
             try {
