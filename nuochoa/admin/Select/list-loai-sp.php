@@ -88,9 +88,16 @@
                 ?>
                 </td>
                 <td>
-                    <a id="example" href="?makm=<?php echo $row['MaKm']; ?>">
-                        <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalDetail">
-                            <i class="fas fa-search"></i>
+                <script type="text/javascript">
+                     function test(click_ID){
+                        // var click_ID = document.getElementById("editID").value;
+                         alert(click_ID);
+                        console.log(click_ID);
+                     }
+                </script>
+                    <a id="example">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalEditCategory" onclick="test(<?php echo $row['MaLoai']?>)">
+                        <i class="fas fa-edit"></i>
                         </button>
                     </a>&nbsp;
 
@@ -114,3 +121,23 @@
 
 <!-- modal detail -->
 <?php include('list-product-detail.php'); ?>
+<!-- Modal -->
+<div class="modal fade" id="modalEditCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
-
 <?php
+// DONE
 function insert_loaisp($maloai, $tenloai,$mota)
 {
     try {
@@ -239,22 +239,37 @@ function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat,
         echo "connection failed: " . $e->getMessage();
     }
 }
-
+//  DONE
 function insert_tintuc($matin,$noidung,$tieude)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '.\..\..\select.php';
         $table=query_select("select * from tintuc where matin='".$matin."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Tài khoản đã tồn tại')</script>";
+                echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'error',
+                    title: 'Mã tin tức đã tồn tại !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 500);</script>';
             }
         else {
         $sql = "Insert into tintuc (matin,noidung,tieude) values ('$matin','$noidung','$tieude')";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { Swal.fire({
+            type: 'success',
+            title: 'Thêm tin tức thành công !',
+            showConfirmButton: false,
+            timer: 1500
+          });";
+        echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

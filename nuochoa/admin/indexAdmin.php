@@ -96,6 +96,14 @@
                     {
                         include("./Add/add-category.php");
                     }
+                    else if($page=='list_tin_tuc')
+                    {
+                        include("./Select/list-tin-tuc.php");
+                    }
+                    else if($page=='them_tin_tuc')
+                    {
+                        include("./Add/add-news.php");
+                    }
                 }
                 else
                 {

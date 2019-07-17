@@ -36,31 +36,37 @@
                 <li class="nav-item">
                   <a href="indexAdmin.php" class="nav-link active">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>List sản phẩm</p>
+                    <p>Quản lý sản phẩm</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=loai_sp" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Loại sản phẩm</p>
+                    <p>Quản lý loại sản phẩm</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=list_npp" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>List nhà phân phối</p>
+                    <p>Quản lý nhà phân phối</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=list_km" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>List khuyến mãi</p>
+                    <p>Quản lý khuyến mãi</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=list_ct_km" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>List chương trình KM</p>
+                    <p>Quản lý chương trình KM</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="indexAdmin.php?page=list_tin_tuc" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Quản lý tin tức</p>
                   </a>
                 </li>
               </ul>
