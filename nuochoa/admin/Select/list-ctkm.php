@@ -78,7 +78,7 @@
             <tr>
                 <td><?php echo $stt++; ?></td>
                 <td><?php echo $row['MaKm'] ?></td>
-                <td><?php echo $row['MaSP'] ?></td>
+                <td><?php print_r($row['MaSP'])?></td>
                 <td><?php echo $row['TGBD'] ?></td>
                 <td><?php echo $row['TGKT'] ?></td>
                 <td><?php echo $row['Tilegiamgia'] ?></td>

@@ -115,14 +115,14 @@ function insert_ctkm( $makm, $masp,$tgbd,$tgkt,$tilegiamgia,$ghichu)
     try {
         include '../connect.php';
         // include '.\..\..\select.php';
-        $table=query_select("select * from ctkm where makm='".$makm."'");
+        $table=query_select("select * from ctkm where makm='".$makm."' and masp='".$masp."'");
         $count=$table->rowCount();
         if ($count>0)
             {
                 echo '<script type="text/javascript">';
                 echo "setTimeout(function () { Swal.fire({
                     type: 'error',
-                    title: 'Chương trình khuyến mãi đã tồn tại !',
+                    title: 'Sản phẩm ".$masp." khuyến mãi đã tồn tại !',
                     showConfirmButton: false,
                     timer: 1500
                   });";

@@ -48,7 +48,7 @@ function update_admin($tentk, $matkhau, $quyen)
         echo "connection failed: " . $e->getMessage();
     }
 }
-
+// DONE
 function update_password($tentk, $matkhau, $matkhaumoi)
 {
     try {
