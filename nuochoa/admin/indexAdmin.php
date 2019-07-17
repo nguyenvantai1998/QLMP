@@ -1,12 +1,12 @@
 <?php
 
-    // if(!isset($_SERVER['HTTP_REFERER'])){
-    //     // redirect them to your desired location
-    //     header('location:../index.php');
-    //     exit;
-    // }
-
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        // redirect them to your desired location
+        header('location:../index.php');
+        exit;
+    }
   session_start();
+  $_SESSION['isLoged'] = true;
   if($_SESSION['helloTitle']==1){
       echo '<script type="text/javascript">';
 

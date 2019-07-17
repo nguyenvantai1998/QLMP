@@ -1,8 +1,13 @@
 <?php
-session_start();
+    session_start();
     include("select.php");   
     $user = $password = "";
     $_SESSION['helloTitle']=1;
+ 
+    if($_SESSION['isLoged']){
+       header("location:admin/indexAdmin.php");
+    }
+
     if (isset($_POST["submit"])) {
         if ($_POST['user'] != "" && $_POST['password'] != "") {
             try {    
