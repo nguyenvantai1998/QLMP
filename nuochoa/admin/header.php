@@ -1,3 +1,42 @@
+
+<!-- sesstion -->
+<?php session_start(); ?>
+
+<?php include('./../connect.php'); ?>
+
+<?php
+
+    // if(!isset($_SERVER['HTTP_REFERER'])){
+    //     // redirect them to your desired location
+    //     header('location:../index.php');
+    //     exit;
+    // }
+
+  if($_SESSION['helloTitle']==1){
+      echo '<script type="text/javascript">';
+
+      echo "setTimeout(function () { Swal.fire({
+      type: 'success',
+      title: 'Chào mừng ADMIN !',
+      showConfirmButton: false,
+      timer: 1000
+      });";
+
+      echo '}, 1000);</script>';
+      $_SESSION['helloTitle'] = 0;
+  }
+
+?>
+
+<!-- query insert -->
+<?php include("Query/admin_insert.php"); ?>
+
+<!-- query delete -->
+<?php include("Query/admin_delete.php"); ?>
+
+<!-- query update -->
+<?php include("Query/admin_update.php") ?>
+
 <!DOCTYPE html>
 <html>
 

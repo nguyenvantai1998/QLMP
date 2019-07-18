@@ -49,20 +49,26 @@
 </div>
 <!-- /.row -->
 
+<!-- delete -->
+
+
 <!-- list -->
 <div class="row">
     <table class="table table-hover text-center">
         <thead>
             <tr>
-                <th>STT</th>
                 <th>Mã Sản Phẩm</th>
-                <th>Mã Loại</th>
                 <th>Tên Sản Phẩm</th>
                 <th>Giá</th>
                 <th>Số Lượng</th>
                 <th>Trạng Thái</th>
-                <th>MaNCC</th>
-                <th>Actions</th>
+                <th>Image</th>
+                <th>Chi Tiết</th>
+                <th>
+                    <button type="button" name="delete_all" id="delete_all" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -70,30 +76,47 @@
         <?php
             $table = query_select("SELECT * FROM sp");
             $count = $table->rowCount();
-            $stt = 1;
             if ($count > 0) {
                 foreach ($table as $row) {
+                    $masp = $row['MaSP'];
         ?>
 
             <tr>
-                <td><?php echo $stt++; ?></td>
                 <td><?php echo $row['MaSP'] ?></td>
-                <td><?php echo $row['Maloai'] ?></td>
                 <td><?php echo $row['Tensp'] ?></td>
                 <td><?php echo $row['Gia'] ?></td>
                 <td><?php echo $row['Soluong'] ?></td>
                 <td><?php echo $row['trangthai'] ?></td>
-                <td><?php echo $row['MaNcc'] ?></td>
+                <td style="width:20%;">
+                    <div class="row">
+                        <?php 
+                            $table = query_select("SELECT * FROM sp, video WHERE sp.MaSP = video.MaSP AND sp.MaSP = '$masp'");
+                            $count = $table->rowCount();
+                            if($count > 0)
+                            {
+                                foreach ($table as $row) {
+                        ?>
+                        <div class="col-md-3" style="margin-bottom:5px;">
+                            <img class="img-thumbnail" src="./../<?php echo $row['URLHinh'] ?>" alt="">
+                        </div>
+                        <?php
+                                }
+                            }
+                        ?>
+                        <div class="col-md-3">
+                            <a href="?page=upload&&masp=<?php echo $masp ?>"><button class="btn"><i class="fas fa-plus-square"></i></button></a>
+                        </div>
+                    </div>
+                </td>
                 <td>
-                    <a id="example" href="?masp=<?php echo $row['MaSP']; ?>">
-                        <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalDetail">
-                            <i class="fas fa-search"></i>
+                    <a id="example" href="?page=detail-product&&masp=<?php echo $row['MaSP']; ?>">
+                        <button type="button" class="btn btn-info">
+                            <i class="far fa-eye"></i>
                         </button>
                     </a>&nbsp;
-
-                    <button type="button" class="btn btn-danger">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
+                </td>
+                <td>
+                    <input type="checkbox" class="delete_checkbox" value="<?php echo $masp; ?>">
                 </td>
             </tr>
 
@@ -108,6 +131,3 @@
         </tbody>
     </table><!-- list product -->
 </div>
-
-<!-- modal detail -->
-<?php include('list-product-detail.php'); ?>

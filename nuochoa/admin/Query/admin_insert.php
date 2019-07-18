@@ -208,7 +208,6 @@ function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat,
 {
     try {
         include '../connect.php';
-        // include '../select.php';
         $table=query_select("select * from sp where MaSP='".$masp."'");
         $count=$table->rowCount();
         if ($count>0)
@@ -220,20 +219,12 @@ function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat,
                     showConfirmButton: false,
                     timer: 1500
                   });";
-                echo '}, 500);</script>';
+                echo '}, 100);</script>';
             }
         else {
         $sql = "INSERT INTO `sp`(`MaSP`, `Maloai`, `Tensp`, `Gia`, `Soluong`, `MaNcc`, `Ngaysanxuat`, `hansudung`, `dungtich`, `Mota`, `Ngaynhaphang`, `trangthai`) VALUES ('$masp', '$maloai', '$tensp', '$gia', '$soluong', '$mancc', '$ngaysanxuat', '$hansudung', '$dungtich', '$mota', '$ngaynhaphang', '$trangthai')";
         $conn->exec($sql);
         $conn=null;
-        echo '<script type="text/javascript">';
-                echo "setTimeout(function () { Swal.fire({
-                    type: 'success',
-                    title: 'thêm sản phẩm thành công !',
-                    showConfirmButton: false,
-                    timer: 1500
-                  });";
-                echo '}, 500);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
@@ -261,23 +252,15 @@ function insert_tintuc($matin,$noidung,$tieude)
     }
 }
 
-function insert_video($mamulti,$masp, $matin,$makh,$urlhinh,$urlvideo)
+function insert_video($masp, $matin,$makh,$urlhinh,$urlvideo)
 {
     try {
         include '.\..\..\connect.php';
-        include '.\..\..\select.php';
-        $table=query_select("select * from video where mamulti='".$mamulti."'");
-        $count=$table->rowCount();
-        if ($count>0)
-            {
-               echo "<script>alert('Mã video đã tồn tại')</script>";
-            }
-        else {
-        $sql = "Insert into video (mamulti, masp,matin,makh,urlhinh,urlvideo) values ('$mamulti','$masp','$matin','$makh','$urlhinh','$urlvideo')";
+       
+        $sql = "Insert into video ( masp,matin,makh,urlhinh,urlvideo) values ($masp','$matin','$makh','$urlhinh','$urlvideo')";
         $conn->exec($sql);
         $conn=null;
-        }
-    } catch (PDOException $e) {
+          } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
     }
 }

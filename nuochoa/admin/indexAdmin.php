@@ -1,27 +1,4 @@
-<?php
 
-    // if(!isset($_SERVER['HTTP_REFERER'])){
-    //     // redirect them to your desired location
-    //     header('location:../index.php');
-    //     exit;
-    // }
-
-  session_start();
-  if($_SESSION['helloTitle']==1){
-      echo '<script type="text/javascript">';
-
-      echo "setTimeout(function () { Swal.fire({
-      type: 'success',
-      title: 'Chào mừng ADMIN !',
-      showConfirmButton: false,
-      timer: 1500
-      });";
-
-      echo '}, 1000);</script>';
-      $_SESSION['helloTitle'] = 0;
-  }
-
-  ?>
 <!-- header -->
 <?php include("header.php"); ?>
 
@@ -38,7 +15,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dashboard</h1>
+                    <h1 class="m-0 text-dark">Quản trị viên</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -57,12 +34,15 @@
 
             <!-- set page show -->
             <?php 
-                include("Query/admin_insert.php");
                 include("../select.php");
                 if(isset($_GET['page']))
                 {
                     $page = $_GET['page'];
-                    if($page=='list_npp')
+                    if($page == 'detail-product')
+                    {
+                        include("./Detail/detail-product.php");
+                    }
+                    else if($page=='list_npp')
                     {
                         include("./Select/list-distribution.php");
                     }
@@ -72,7 +52,7 @@
                     }
                     else if($page=='them_san_pham')
                     {
-                        include("./Add/product.php");
+                        include("./Add/add-product.php");
                     }
                     else if($page=='list_ct_km')
                     {
@@ -95,6 +75,10 @@
                     else if($page=='them_loai')
                     {
                         include("./Add/add-category.php");
+                    }
+                    else if($page == 'upload')
+                    {
+                        include("Upload/upload.php");
                     }
                 }
                 else

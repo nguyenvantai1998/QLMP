@@ -2,9 +2,8 @@
 <?php $masp = $_GET['masp']; ?>
 
 <?php
-    $table = query_select("SELECT * FROM sp, nhacungcap, video WHERE sp.MaNcc = nhacungcap.MaNCC AND sp.MaSP = video.MaSP AND sp.MaSP= '$masp'");
+    $table = query_select("SELECT * FROM sp, nhacungcap WHERE sp.MaNcc = nhacungcap.MaNCC AND sp.MaSP= '$masp'");
     $count = $table->rowCount();
-    // echo $count['Masp'];
     if ($count > 0) {
         foreach ($table as $row) {
 ?>
@@ -18,29 +17,33 @@
         <div class="row box">
             <div class="left-img">
                 <div class="list-img-product">
-                    <img src="<?php echo $row['URLHinh'] ?>" class="tabImgDetail" alt="">
-                    <!-- <img src="./assets/img/19b62738ccd9e79d308c6aa1632638b6.jpg" class="tabImgDetail" alt="">
-                    <img src="./assets/img/dt-2.jpg" class="tabImgDetail"alt="">
-                    <img src="./assets/img/1540266151.5082.png" class="tabImgDetail" alt="">
-                    <img src="./assets/img/1540266151.5082.png" class="tabImgDetail" alt=""> -->
+                    <?php
+                        $table = query_select("SELECT * FROM sp, video WHERE sp.MaSP = video.MaSP AND sp.MaSP= '$masp' limit 0,5 ");
+                        $count = $table->rowCount();
+                        if ($count > 0) {
+                            foreach ($table as $row1) {
+                    ?>
+                    <img src="<?php echo $row1['URLHinh'] ?>" class="tabImgDetail" alt="">
+                        <?php
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="list-button-img">
+                    <?php
+                        $table = query_select("SELECT * FROM sp, video WHERE sp.MaSP = video.MaSP AND sp.MaSP= '$masp' limit 0,5 ");
+                        $count = $table->rowCount();
+                        if ($count > 0) {
+                            foreach ($table as $row2) {
+                    ?>
                     <button class="buttonTabImgDetail buttonTabImgDetail-active">
-                        <img src="<?php echo $row['URLHinh'] ?>">
+                        <img src="<?php echo $row2['URLHinh'] ?>">
                     </button>
-                    <!-- <button class="buttonTabImgDetail">
-                        <img src="./assets/img/1540266151.5082.png">
-                    </button>
-                    <button class="buttonTabImgDetail">
-                        <img src="./assets/img/1540266151.5082.png">
-                    </button>
-                    <button class="buttonTabImgDetail">
-                        <img src="./assets/img/1540266151.5082.png">
-                    </button>
-                    <button class="buttonTabImgDetail">
-                        <img src="./assets/img/1540266151.5082.png">
-                    </button> -->
+                        <?php
+                            }
+                        }
+                    ?>
                 </div>
             </div>
             <div class="right-content">

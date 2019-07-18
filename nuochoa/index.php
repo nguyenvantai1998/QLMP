@@ -63,7 +63,7 @@
                     <!-- title -->
                     <div class="row-1 title">
                         <div class="bg-tt-1">
-                            <h2>News</h2>
+                            <h2>Sản Phẩm Mới (KM)</h2>
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@
             <div class="pr-container">
                 <div class="row-1 title">
                     <div class="bg-tt-1">
-                        <h2>Sales</h2>
+                        <h2>Sản Phẩm Khuyến Mãi</h2>
                     </div>
                 </div>
 

@@ -44,7 +44,7 @@
 
                 <div class="list-product">
                 <?php
-                    $table = query_select("SELECT * FROM sp, video, nhacungcap WHERE sp.MaSP = video.MaSP AND sp.MaNcc = nhacungcap.MaNCC AND sp.MaSP='$msp'");
+                    $table = query_select("SELECT * FROM sp, nhacungcap WHERE sp.MaNcc = nhacungcap.MaNCC AND sp.MaSP='$msp'");
                     $count = $table->rowCount();
                     if ($count > 0) {
                         foreach ($table as $row) {
@@ -53,8 +53,19 @@
                     <div class="item-product">
                         <div class="box">
                             <div class="img">
-                                <a href="?p=detail&&masp=<?php echo $masp ?>"><img src="<?php echo $row['URLHinh'] ?>"
-                                        alt=""></a>
+                                <a href="?p=detail&&masp=<?php echo $masp ?>">
+                                <?php 
+                                    $table = query_select("SELECT * FROM video WHERE video.MaSP = '".$masp."' limit 1");
+                                    $count = $table->rowCount();
+                                    if ($count > 0) {
+                                        foreach ($table as $row_img) {
+                                ?>
+                                <img src="<?php echo $row_img['URLHinh']; ?>" alt="">
+                                    <?php 
+                                        }
+                                    }
+                                ?>
+                                </a>
                             </div>
                             <div class="content">
                                 <p class="name-product"><a href="#"><?php echo mysubstr($row['Tensp'],20) ?></a></p>
@@ -101,8 +112,19 @@
                     <div class="item-product">
                         <div class="box">
                             <div class="img">
-                                <a href="?p=detail&&masp=<?php echo $masp ?>"><img src="<?php echo $row['URLHinh'] ?>"
-                                        alt=""></a>
+                                <a href="?p=detail&&masp=<?php echo $masp ?>">
+                                <?php 
+                                    $table = query_select("SELECT * FROM video WHERE video.MaSP = '".$masp."' limit 1");
+                                    $count = $table->rowCount();
+                                    if ($count > 0) {
+                                        foreach ($table as $row_img) {
+                                ?>
+                                <img src="<?php echo $row_img['URLHinh']; ?>" alt="">
+                                    <?php 
+                                        }
+                                    }
+                                ?>
+                                </a>
                             </div>
                             <div class="content">
                                 <p class="name-product"><a href="#"><?php echo mysubstr($row['Tensp'],20) ?></a></p>

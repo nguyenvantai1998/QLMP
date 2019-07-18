@@ -54,6 +54,7 @@ $(document).ready(function () {
   $('.buttonTabImgDetail').addClass(function(index){
     return "buttonTabImgDetail_" + index;
   });
+  $('.buttonTabImgDetail_0').addClass('buttonTabImgDetail-active');
   $('.buttonTabImgDetail_0').click(function(){
     $('.tabImgDetail_0').show();
     $('.buttonTabImgDetail_0').addClass('buttonTabImgDetail-active');

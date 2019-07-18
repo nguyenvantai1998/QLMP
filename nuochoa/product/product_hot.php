@@ -1,8 +1,9 @@
+<!-- sản phẩm mới nhất, và có khuyến mãi -->
 <div class="row-2 box-product">
     <!-- select -->
     <?php
         // pagination
-        $t = query_select("SELECT * FROM sp, video, ctkm, kmai	WHERE sp.MaSP = video.MaSP AND sp.trangthai='new' AND sp.MaSP = ctkm.MaSP AND ctkm.MaKm = kmai.MaKm");
+        $t = query_select("SELECT * FROM sp, ctkm, kmai	WHERE sp.trangthai='new' AND sp.MaSP = ctkm.MaSP AND ctkm.MaKm = kmai.MaKm");
         $total = $t->rowCount();
 
         $start = 0;
@@ -19,7 +20,7 @@
         }
 
         $page = ceil($total/$limit);
-        $table = query_select("SELECT * FROM sp, video, ctkm, kmai WHERE sp.MaSP = video.MaSP  AND sp.trangthai='new' AND sp.MaSP = ctkm.MaSP AND ctkm.MaKm = kmai.MaKm limit $start, $limit");
+        $table = query_select("SELECT * FROM sp, ctkm, kmai WHERE sp.trangthai='new' AND sp.MaSP = ctkm.MaSP AND ctkm.MaKm = kmai.MaKm limit $start, $limit");
         $count = $table->rowCount();
         if ($count > 0) {
             foreach ($table as $row) {
@@ -29,7 +30,17 @@
     <div class="box">
         <div>
             <div class="img">
-                <img src="<?php echo $row['URLHinh']; ?>" alt="">
+                <?php 
+                    $table = query_select("SELECT * FROM video WHERE video.MaSP = '".$masp."' limit 1");
+                    $count = $table->rowCount();
+                    if ($count > 0) {
+                        foreach ($table as $row_img) {
+                ?>
+                <img src="<?php echo $row_img['URLHinh']; ?>" alt="">
+                    <?php 
+                        }
+                    }
+                ?>
             </div>
             <div class="name-price-sale">
                 <a href="?p=detail&&masp=<?php echo $masp ?>">
