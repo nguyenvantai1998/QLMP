@@ -82,7 +82,7 @@ if($_SESSION['DeleteCheck']){
         <tbody>
 
         <?php
-            $table = query_select("SELECT * FROM tintuc1");
+            $table = query_select("SELECT * FROM tintuc");
             $count = $table->rowCount();
             $stt = 1;
             if ($count > 0) {
@@ -105,7 +105,6 @@ if($_SESSION['DeleteCheck']){
                 ?>
                 </td>
                 <td>
-                <!-- data-toggle="modal" data-target="#modalEditCategory" onclick="test(<?php echo $row['MaTin']?>)" -->
                     <a href="indexAdmin.php?page=sua_tin_tuc&id=<?php echo $row['MaTin']?>">
                         <button type="button" class="btn btn-info">
                         <i class="fas fa-edit"></i>

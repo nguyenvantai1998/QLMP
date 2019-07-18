@@ -115,14 +115,14 @@ function insert_ctkm( $makm, $masp,$tgbd,$tgkt,$tilegiamgia,$ghichu)
     try {
         include '../connect.php';
         // include '.\..\..\select.php';
-        $table=query_select("select * from ctkm where makm='".$makm."'");
+        $table=query_select("select * from ctkm where makm='".$makm."' and masp='".$masp."'");
         $count=$table->rowCount();
         if ($count>0)
             {
                 echo '<script type="text/javascript">';
                 echo "setTimeout(function () { Swal.fire({
                     type: 'error',
-                    title: 'Chương trình khuyến mãi đã tồn tại !',
+                    title: 'Sản phẩm ".$masp." khuyến mãi đã tồn tại !',
                     showConfirmButton: false,
                     timer: 1500
                   });";
@@ -230,22 +230,29 @@ function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat,
         echo "connection failed: " . $e->getMessage();
     }
 }
-
-function insert_tintuc($matin,$noidung,$tieude)
+// DONE
+function insert_tintuc($noidung,$tieude)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
         $table=query_select("select * from tintuc where matin='".$matin."'");
         $count=$table->rowCount();
         if ($count>0)
             {
-               echo "<script>alert('Tài khoản đã tồn tại')</script>";
+               echo "<script>alert('Tin đã tồn tại')</script>";
             }
         else {
-        $sql = "Insert into tintuc (matin,noidung,tieude) values ('$matin','$noidung','$tieude')";
+        $sql = "Insert into tintuc (noidung,tieude) values ('$noidung','$tieude')";
         $conn->exec($sql);
         $conn=null;
+        echo '<script type="text/javascript">';
+                echo "setTimeout(function () { Swal.fire({
+                    type: 'success',
+                    title: 'Thêm tin tức thành công !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });";
+                echo '}, 100);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

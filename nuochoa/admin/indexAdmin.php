@@ -42,7 +42,8 @@
                     {
                         include("./Detail/detail-product.php");
                     }
-                    else if($page=='list_npp')
+                    // NPP
+                    else  if($page=='list_npp')
                     {
                         include("./Select/list-distribution.php");
                     }
@@ -50,24 +51,45 @@
                     {
                         include("./Add/add-distribution.php");
                     }
+                    else if($page=='sua_npp')
+                    {
+                        include("./Update/update-distribution.php");
+                    }
+                    else if($page=='xoa_npp')
+                    {
+                        include("./Delete/delete-distribution.php");
+                    }
+                    // PRODUCT
                     else if($page=='them_san_pham')
                     {
-                        include("./Add/add-product.php");
+                        include("./Add/product.php");
                     }
+                    // CTKM
                     else if($page=='list_ct_km')
                     {
                         include("./Select/list-ctkm.php");
                     }
                     else if($page=='them_ct_km')
                     {
-                        include("./Add/add-dicount.php");
-                    }else if($page=='list_km')
+                        include("./Add/add-ctkm.php");
+                    }
+                    else if($page=='sua_ct_km')
+                    {
+                        include("./Update/update-ctkm.php");
+                    }
+                    else if($page=='xoa_ct_km')
+                    {
+                        include("./Delete/delete-ctkm.php");
+                    }
+                    // DISCOUNT
+                    else if($page=='list_km')
                     {
                         include("./Select/list-km.php");
                     }else if($page=='them_km')
                     {
                         include("./Add/add-km.php");
                     }
+                    // CATEGORY
                     else if($page=='loai_sp')
                     {
                         include("./Select/list-loai-sp.php");
@@ -76,10 +98,28 @@
                     {
                         include("./Add/add-category.php");
                     }
-                    else if($page == 'upload')
+                    // NEWS - DONE
+                    else if($page=='list_tin_tuc')
                     {
-                        include("Upload/upload.php");
+                        include("./Select/list-tin-tuc.php");
                     }
+                    else if($page=='them_tin_tuc')
+                    {
+                        include("./Add/add-news.php");
+                    }
+                    else if($page=='sua_tin_tuc')
+                    {
+                        include("./Update/update-news.php");
+                    }
+                    else if($page=='xoa_tin_tuc')
+                    {
+                        include("./Delete/delete-news.php");
+                    }
+                    // CHANGE PASSWORD
+                    else if($page=='doi_mk')
+                    {
+                        include("./Update/update-password.php");
+                    } 
                 }
                 else
                 {

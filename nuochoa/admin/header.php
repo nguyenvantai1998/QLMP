@@ -2,16 +2,14 @@
 <!-- sesstion -->
 <?php session_start(); ?>
 
-<?php include('./../connect.php'); ?>
-
 <?php
 
-    // if(!isset($_SERVER['HTTP_REFERER'])){
-    //     // redirect them to your desired location
-    //     header('location:../index.php');
-    //     exit;
-    // }
-
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        // redirect them to your desired location
+        header('location:../index.php');
+        exit;
+    }
+  $_SESSION['isLoged'] = true;
   if($_SESSION['helloTitle']==1){
       echo '<script type="text/javascript">';
 

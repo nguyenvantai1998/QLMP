@@ -39,8 +39,7 @@ function delete_ncc( $mancc)
         
                 $sql = "delete from nhacungcap  where mancc='$mancc'";
                 $conn->exec($sql);
-                $conn=null;             
-                echo "<script>alert('đã xóa dữ liệu')</script>";              
+                $conn=null;                        
         
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
@@ -50,13 +49,11 @@ function delete_ncc( $mancc)
 function delete_ctkm( $makm,$masp)
 {
     try {
-        include '.\..\..\connect.php';
+        include '../connect.php';
        
         $sql = "delete from ctkm where makm='$makm' and masp='$masp'";
         $conn->exec($sql);
         $conn=null;   
-        echo "<script>alert('đã xóa dữ liệu')</script>";
-        
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
     }
@@ -114,18 +111,16 @@ function delete_sp($masp)
         ";
     }
 }
-
+// 
 function delete_tintuc($matin)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '..\connect.php';
+        // include '.\..\..\select.php';
       
         $sql = "delete from tintuc where matin='$matin'";
         $conn->exec($sql);
-        $conn=null;             
-        echo "<script>alert('đã xóa dữ liệu')</script>";
-        
+        $conn=null;
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();
     }

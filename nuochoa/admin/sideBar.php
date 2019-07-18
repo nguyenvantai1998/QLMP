@@ -36,7 +36,7 @@
                 <li class="nav-item">
                   <a href="indexAdmin.php" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Danh sách sản phẩm</p>
+                    <p>Danh sách sản phẩm(DONE)</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -48,7 +48,7 @@
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=list_npp" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Danh sách nhà phân phối</p>
+                    <p>Danh sách nhà phân phối(DONE)</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -60,7 +60,13 @@
                 <li class="nav-item">
                   <a href="indexAdmin.php?page=list_ct_km" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Danh sách chương trình KM</p>
+                    <p>Danh sách chương trình KM(DONE)</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="indexAdmin.php?page=list_tin_tuc" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Quản lý tin tức(DONE)</p>
                   </a>
                 </li>
               </ul>

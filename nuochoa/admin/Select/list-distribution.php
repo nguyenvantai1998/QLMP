@@ -1,3 +1,21 @@
+<script type="text/javascript">
+	function deleleAction(){
+		return confirm("Bạn có muốn xóa tin tức này?");
+	}
+</script>
+<?php
+if($_SESSION['DeleteCheck']){
+    echo '<script type="text/javascript">';
+    echo "setTimeout(function () { Swal.fire({
+        type: 'success',
+        title: 'Đã xóa nhà phân phối!',
+        showConfirmButton: false,
+        timer: 1500
+         });";
+    echo '}, 1000);</script>';
+    $_SESSION['DeleteCheck'] = false;
+}
+?>
 <!-- Small boxes (Stat box) -->
 <div class="row">
     <div class="col-lg-3 col-6">
@@ -81,15 +99,16 @@
                 <td><?php echo $row['MaSoThue'] ?></td>
                 <td><?php echo $row['Gioithieu'] ?></td>
                 <td>
-                    <a id="example" href="?masp=<?php echo $row['MaSP']; ?>">
-                        <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalDetail">
-                            <i class="fas fa-search"></i>
+                <a href="?page=sua_npp&id=<?php echo $row['MaNCC']?>">
+                        <button type="button" class="btn btn-info">
+                        <i class="fas fa-edit"></i>
                         </button>
                     </a>&nbsp;
-
+                    <a href="?page=xoa_npp&id=<?php echo $row['MaNCC']?>" onclick='return deleleAction();'>
                     <button type="button" class="btn btn-danger">
                         <i class="fas fa-trash-alt"></i>
                     </button>
+                    </a>
                 </td>
             </tr>
 

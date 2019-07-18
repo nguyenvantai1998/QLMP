@@ -1,3 +1,13 @@
+<?php
+  if (isset($_POST['logOut'])) {
+    logout();
+  //  $_SESSION["userSession"]
+  }
+  function logout() {
+    session_destroy();
+    header('location:../index.php');
+  }
+?>
 <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
@@ -5,10 +15,15 @@
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" class="nav-link">Home</a>
+          <a href="../index.php" class="nav-link">Trang chủ</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
+          <a href="indexAdmin.php?page=doi_mk" class="nav-link">Đổi mật khẩu</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+        <form action="" method="post">
+          <button type="submit" class="nav-link" name="logOut">Đăng xuất</button>
+          </form>
         </li>
       </ul>
 

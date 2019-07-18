@@ -1,3 +1,21 @@
+<script type="text/javascript">
+	function deleleAction(){
+		return confirm("Bạn có muốn xóa tin tức này?");
+	}
+</script>
+<?php
+if($_SESSION['DeleteCheck']){
+    echo '<script type="text/javascript">';
+    echo "setTimeout(function () { Swal.fire({
+        type: 'success',
+        title: 'Đã xóa chương trình KM!',
+        showConfirmButton: false,
+        timer: 1500
+         });";
+    echo '}, 1000);</script>';
+    $_SESSION['DeleteCheck'] = false;
+}
+?>
 <!-- Small boxes (Stat box) -->
 <div class="row">
     <div class="col-lg-3 col-6">
@@ -67,7 +85,7 @@
         </thead>
         <tbody>
 
-        <?php
+            <?php
             $table = query_select("SELECT * FROM ctkm");
             $count = $table->rowCount();
             $stt = 1;
@@ -85,15 +103,17 @@
                 <td><?php echo $row['member'] ?></td>
                 <td><?php echo $row['Ghichu'] ?></td>
                 <td>
-                    <a id="example" href="?makm=<?php echo $row['MaKm']; ?>">
-                        <button type="button" class="btn btn-info"  data-toggle="modal" data-target="#myModalDetail">
-                            <i class="fas fa-search"></i>
+                    <a href="?page=sua_ct_km&id=<?php echo $row['MaKm'];?>&product=<?php echo $row['MaSP'];?>">
+                        <button type="button" class="btn btn-info">
+                            <i class="fas fa-edit"></i>
                         </button>
                     </a>&nbsp;
-
-                    <button type="button" class="btn btn-danger">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
+                    <a href="?page=xoa_ct_km&id=<?php echo $row['MaKm'];?>&product=<?php echo $row['MaSP'];?>"
+                        onclick='return deleleAction();'>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </a>
                 </td>
             </tr>
 
