@@ -108,16 +108,24 @@ function delete_sp($masp)
     }
 }
 
+
 function delete_tintuc($matin)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
+        include '../connect.php';
+        // include '.\..\..\select.php';
       
-        $sql = "delete from tintuc where matin='$matin'";
+        $sql = "delete from tintuc1 where matin='$matin'";
         $conn->exec($sql);
         $conn=null;             
-        echo "<script>alert('đã xóa dữ liệu')</script>";
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { Swal.fire({
+            type: 'success',
+            title: 'Đã xóa tin tức!',
+            showConfirmButton: false,
+            timer: 1500
+             });";
+        echo '}, 1000);</script>';
         
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

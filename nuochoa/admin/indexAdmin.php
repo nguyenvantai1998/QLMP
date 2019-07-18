@@ -59,6 +59,7 @@
             <?php 
                 include("Query/admin_insert.php");
                 include("Query/admin_update.php");
+                include("Query/admin_delete.php");
                 include("../select.php");
                 if(isset($_GET['page']))
                 {
@@ -108,6 +109,14 @@
                     else if($page=='doi_mk')
                     {
                         include("./Update/update-password.php");
+                    }
+                    else if($page=='sua_tin_tuc')
+                    {
+                        include("./Update/update-news.php");
+                    }
+                    else if($page=='xoa_tin_tuc')
+                    {
+                        include("./Delete/delete-news.php");
                     }
                 }
                 else

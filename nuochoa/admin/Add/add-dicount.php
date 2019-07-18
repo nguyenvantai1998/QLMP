@@ -28,28 +28,6 @@
            echo '}, 1000);</script>';
        }
    }
-   // $t = query_select("SELECT * FROM sp");
-   //      $total = $t->rowCount();
-
-   //      $start = 0;
-   //      $limit = 10;
-
-   //      if(isset($_GET['id']))
-   //      {
-   //          $id = $_GET['id'];
-   //          $start = ($id-1)*$limit;
-   //      }
-   //      else
-   //      {
-   //          $id = 1;
-   //      }
-
-   //      $page = ceil($total/$limit);
-   //      $tablePaginate = query_select("SELECT * FROM sp");
-   //      $countPaginate = $table->rowCount();
-   //      if ($count > 0) {
-   //          foreach ($tablePaginate as $rowPaginate) {
-   //          $maspPaginate = $rowPaginate['MaSP'];
    ?>
 <!-- FORM -->
 <form id="" method="post">
@@ -98,26 +76,6 @@
         <label for="inputEmail3" class="col-sm-2 col-form-label">thông tin CT<span class="text-danger">*</span></label>
         <div class="col-sm-10">
             <div class="form-row">
-                <!-- <div class="form-group col-md-6">
-               <label>Sản phẩm</label>
-               <select class="form-control" name="codesp" multiple>
-                  <?php
-                     $tablesp = query_select("SELECT * FROM sp");
-                     $countsp = $tablesp->rowCount();
-                     if ($countsp > 0) {
-                     foreach ($tablesp as $rowsp) {
-                     ?>
-                  <option value="<?php echo $rowsp['MaSP'] ?>"><?php echo $rowsp['Tensp'];echo "-"; echo $rowsp['MaSP']; ?></option>
-                  <?php
-                     }
-                     }
-                     else
-                     {
-                     echo "<h2>Hiện tại chưa có sản phẩm...</h2>";
-                     }
-                     ?>
-               </select>
-            </div> -->
                 <div class="form-group col-md-12">
                     <label for="inputState">Sale (%)</label>
                     <input type="number" class="form-control" placeholder="50" name="htkm">

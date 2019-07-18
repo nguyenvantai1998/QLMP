@@ -1,3 +1,21 @@
+<script type="text/javascript">
+	function deleleAction(){
+		return confirm("Bạn có muốn xóa tin tức này?");
+	}
+</script>
+<?php
+if($_SESSION['DeleteCheck']){
+    echo '<script type="text/javascript">';
+    echo "setTimeout(function () { Swal.fire({
+        type: 'success',
+        title: 'Đã xóa tin tức!',
+        showConfirmButton: false,
+        timer: 1500
+         });";
+    echo '}, 1000);</script>';
+    $_SESSION['DeleteCheck'] = false;
+}
+?>
 <!-- Small boxes (Stat box) -->
 <div class="row">
     <div class="col-lg-3 col-6">
@@ -55,7 +73,7 @@
         <thead>
             <tr>
                 <th>STT</th>
-                <th>Mã tin</th>
+                <!-- <th>Mã tin</th> -->
                 <th>Tên tin tức</th>
                 <th>Nội dung</th>
                 <th>Actions</th>
@@ -64,7 +82,7 @@
         <tbody>
 
         <?php
-            $table = query_select("SELECT * FROM tintuc");
+            $table = query_select("SELECT * FROM tintuc1");
             $count = $table->rowCount();
             $stt = 1;
             if ($count > 0) {
@@ -73,7 +91,7 @@
 
             <tr>
                 <td><?php echo $stt++; ?></td>
-                <td><?php echo $row['MaTin'] ?></td>
+                <!-- echo $row['MaTin'] -->
                 <td><?php echo $row['Tieude'] ?></td>
                 <td>
                 <?php
@@ -87,22 +105,17 @@
                 ?>
                 </td>
                 <td>
-                <script type="text/javascript">
-                     function test(click_ID){
-                        // var click_ID = document.getElementById("editID").value;
-                         alert(click_ID);
-                        console.log(click_ID);
-                     }
-                </script>
-                    <a id="example">
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalEditCategory" onclick="test(<?php echo $row['MaLoai']?>)">
+                <!-- data-toggle="modal" data-target="#modalEditCategory" onclick="test(<?php echo $row['MaTin']?>)" -->
+                    <a href="indexAdmin.php?page=sua_tin_tuc&id=<?php echo $row['MaTin']?>">
+                        <button type="button" class="btn btn-info">
                         <i class="fas fa-edit"></i>
                         </button>
                     </a>&nbsp;
-
+                    <a href="indexAdmin.php?page=xoa_tin_tuc&id=<?php echo $row['MaTin']?>" onclick='return deleleAction();'>
                     <button type="button" class="btn btn-danger">
                         <i class="fas fa-trash-alt"></i>
                     </button>
+                    </a>
                 </td>
             </tr>
 
@@ -111,32 +124,9 @@
             }
             else
             {
-                echo "<h2>Hiện tại chưa có sản phẩm...</h2>";
+                echo "<h2>Hiện tại chưa tin tức...</h2>";
             }
         ?>
         </tbody>
     </table><!-- list product -->
-</div>
-
-<!-- modal detail -->
-<?php include('list-product-detail.php'); ?>
-<!-- Modal -->
-<div class="modal fade" id="modalEditCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
 </div>

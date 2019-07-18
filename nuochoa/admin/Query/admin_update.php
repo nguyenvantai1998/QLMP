@@ -199,23 +199,30 @@ function update_sp($masp,$tensp,$gia,$maloai,$soluong,$mancc,$ngaynhaphang,$ngay
         echo "connection failed: " . $e->getMessage();
     }
 }
-
+// DONE
 function update_tintuc($matin,$noidung,$tieude)
 {
     try {
-        include '.\..\..\connect.php';
-        include '.\..\..\select.php';
-        $table=query_select("select * from tintuc where matin='".$matin."'");
+        include '../connect.php';
+        // include '.\..\..\select.php';
+        $table=query_select("select * from tintuc1 where matin='".$matin."'");
         $count=$table->rowCount();
         if ($count==0)
             {
                 echo "<script>alert('Không tìm thấy dữ liệu cần cập nhật')</script>";
             }
         else {
-        $sql = "update  tintuc set noidung='$noidung',tieude='$tieude' where matin='$matin'";
+        $sql = "update  tintuc1 set noidung='$noidung',tieude='$tieude' where matin='$matin'";
         $conn->exec($sql);
         $conn=null;             
-        echo "<script>alert('đã cập nhật dữ liệu')</script>";
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { Swal.fire({
+            type: 'success',
+            title: 'Sửa tin tức thành công!',
+            showConfirmButton: false,
+            timer: 1500
+        });";
+       echo '}, 1000);</script>';
         }
     } catch (PDOException $e) {
         echo "connection failed: " . $e->getMessage();

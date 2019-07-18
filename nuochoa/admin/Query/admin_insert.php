@@ -240,12 +240,12 @@ function insert_sp($masp, $maloai, $tensp, $gia, $soluong, $mancc, $ngaysanxuat,
     }
 }
 //  DONE
-function insert_tintuc($matin,$noidung,$tieude)
+function insert_tintuc($noidung,$tieude)
 {
     try {
         include '../connect.php';
         // include '.\..\..\select.php';
-        $table=query_select("select * from tintuc where matin='".$matin."'");
+        $table=query_select("select * from tintuc1 where matin='".$matin."'");
         $count=$table->rowCount();
         if ($count>0)
             {
@@ -259,7 +259,7 @@ function insert_tintuc($matin,$noidung,$tieude)
                 echo '}, 500);</script>';
             }
         else {
-        $sql = "Insert into tintuc (matin,noidung,tieude) values ('$matin','$noidung','$tieude')";
+        $sql = "Insert into tintuc1 (tieude,noidung) values ('$tieude','$noidung')";
         $conn->exec($sql);
         $conn=null;
         echo '<script type="text/javascript">';

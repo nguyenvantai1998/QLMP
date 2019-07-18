@@ -1,11 +1,10 @@
 <?php
    if (isset($_POST["submit"])) {
-       if ($_POST['maTin'] != "" && $_POST['tenTin'] != ""&& $_POST['noidungTin'] != "") {
+       if ($_POST['tenTin'] != ""&& $_POST['noidungTin'] != "") {
            try {
-            $matin = $_POST['maTin'];
             $tieude = $_POST['tenTin'];
             $noidung = $_POST['noidungTin'];
-               insert_tintuc($matin,$noidung,$tieude);
+               insert_tintuc($noidung,$tieude);
            } catch (Throwable $th) {
                echo $th;
            }
@@ -29,10 +28,10 @@
          class="text-danger">*</span></label>
       <div class="col-sm-10">
          <div class="form-row">
-            <div class="form-group col-md-6">
+            <!-- <div class="form-group col-md-6">
                <input type="text" class="form-control" placeholder="Mã tin tức" name="maTin" >
-            </div>
-            <div class="form-group col-md-6">
+            </div> -->
+            <div class="form-group col-md-12">
                <input type="text" class="form-control" placeholder="Tên tin tức" name="tenTin">
             </div>
          </div>
